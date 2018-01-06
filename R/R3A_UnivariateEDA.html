@@ -244,7 +244,7 @@ getMode(var)</code></pre>
 <p>The measure of dispersion is used to inform if the central value is <em>representative</em>. One way to quantify this concept in polytomous variables is via the Gini Index here, which is present in the versatile package <em>DescTools</em>:</p>
 <pre class="r"><code>library(DescTools) # install this first!
 Gini(table(var))</code></pre>
-<p>The closer the index gets to zero would mean the mode loses salience, the closer to 1, the more salient it is. The Gini is not always easy to understand, but worth using it for comparative purposes<sup><a href="#fn1" id="ref1">1</a></sup>.</p>
+<p>The closer the index gets to zero would mean the mode loses salience, the closer to 1, the more salient it is. The Gini is not the best way to measure inequality, but worth using it for comparative purposes<sup><a href="#fn1" id="ref1">1</a></sup>.</p>
 <p>The above result confirms that there is not one value that has the greater share; but we do not have an equal distribution, do we?</p>
 <pre class="r"><code>chisq.test(table(var))</code></pre>
 <p>From the results above, the most probable is that this variable does not follow a uniform distribution.</p>
@@ -547,16 +547,14 @@ ggplot(data, aes(x=var, fill=as.factor(group))) +  geom_histogram()</code></pre>
 </div>
 <div id="outliers-in-data-exploration" class="section level2">
 <h2>Outliers in data exploration</h2>
-<p>Real data comes most of the time with outliers. These are not bad things, it is just the identification that a value seems to be ‘different’ than the rest. So, the problem to find outliers is also the problem to define what makes a majority of ‘similars’. This is crucial point in governance analytics, as the ‘common good’ becomes a very subjective and highly biased concept in computational terms.</p>
+<p>Real data comes most of the time with outliers. These are not bad things, it is just the identification that a value seems to be ‘different’ than the rest. So, the problem to find outliers is also the problem to define what makes a majority of ‘similars’. This is crucial point in governance analytics, as the ‘common good’ becomes a very subjective concept in computational terms.</p>
 <p>For this topic, we will use the data if SNAP previously explored (particularly the subset at county level).</p>
-<pre class="r"><code>#this is the subset:
-str(snapBenCounties)</code></pre>
-<p>Let’s pay attention to the year 2013; get some descriptives first:</p>
+<p>Let’s pay attention to the year 2013 and get some descriptives first:</p>
 <pre class="r"><code>snapBenCounties$July.2013=as.numeric(snapBenCounties$July.2013)
 summary(snapBenCounties$July.2013)</code></pre>
 <p>Let’s pay attention to the quartiles (25th and 75th percentile). These are elements in boxplots, and their difference, the <em>interquartile range</em> (IQR), is used to identify outliers numerically and visually:</p>
-<pre class="r"><code>bp=boxplot(snapBenCounties$July.2013,horizontal = T)</code></pre>
-<p>The command above not only plotted the boxplot, but showed several <em>values</em> used by R to build the boxplot:</p>
+<pre class="r"><code>(bp=boxplot(snapBenCounties$July.2013,horizontal = T))</code></pre>
+<p>The command above not only plotted the boxplot, but saved several <em>values</em> used by R to build the boxplot:</p>
 <pre class="r"><code># these are the ouliers in the boxplot
 bp$stats</code></pre>
 <p>The first and last elements are the caps of the boxplot, the second and fourth are the limits of the box (the quartlies), the third is the median.</p>
@@ -594,14 +592,19 @@ Mean=mean(snapBenCounties$July.2013,na.rm = T)
 <pre class="r"><code>hist(snapBenCounties$July.2013)</code></pre>
 <p>We have a very asymetric distribution; so we should be careful. If this were a real long-tail distribution, using our previous techniques may fail detecting outliers, specially in the lower tail. Let me see how it looks when I transform the values into logarithmic ones:</p>
 <pre class="r"><code>hist(log(snapBenCounties$July.2013))</code></pre>
-<p>Then, the outlier from the plot:</p>
+<p>Let’s see the “new” outliers:</p>
 <pre class="r"><code>bplog=boxplot(log(snapBenCounties$July.2013),horizontal = T)</code></pre>
-<p>… can be found here:</p>
+<p>This is the amount of outliers detected, this time in both sides:</p>
 <pre class="r"><code># This is the amount of outliers detected, this time in both sides:
 length(bplog$out)</code></pre>
-<p>I can create a column with a flag for outliers:</p>
-<pre class="r"><code># 0 means no outliers, I initialize this way.
-snapBenCounties$out2013=ifelse(log(snapBenCounties$July.2013)&lt;bplog$stats[1],1,                   ifelse(log(snapBenCounties$July.2013)&gt;bplog$stats[5],2,0))
+<p>We will use the latter approach to identify if county is an outlier. That is, I will create a new column with “flags”:</p>
+<pre class="r"><code># this is a complex recode, we should use the &quot;recode&quot; function from the &quot;car&quot; package.
+# 0 means no outliers, 1 lower and 2 upper outliers.
+library(car)
+dataLog=log(snapBenCounties$July.2013)
+low=bplog$stats[1]
+up=bplog$stats[5]
+snapBenCounties$out2013=ifelse(dataLog&lt;low,1,ifelse(dataLog&gt;up,2,0))
 
 # this is our new var:
 table(snapBenCounties$out2013)</code></pre>
