@@ -119,542 +119,186 @@ $(document).ready(function () {
 </div>
 
 
-<br>
-<center>
-<img src="data:image/png;base64,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" width="500">
-</center>
-<div id="course-computational-thinking-for-governance-analytics" class="section level2">
-<h2>Course: Computational Thinking for Governance Analytics</h2>
-<div id="prof.jose-manuel-magallanes-phd" class="section level3">
-<h3>Prof. José Manuel Magallanes, PhD</h3>
-<hr />
+<div id="practicing-session-2---r" class="section level1">
+<h1>Practicing Session 2 - R</h1>
+<p>1.Use this information to <strong>create</strong> a data frame:</p>
+<pre class="r"><code>namesVec=c(&quot;Qing&quot;, &quot;Françoise&quot;, &quot;Raúl&quot;, &quot;Bjork&quot;,&quot;Jim&quot;, &quot;Peter&quot;,&quot;Maria&quot;,&quot;Rosita&quot;)
+agesVec=c(32,-33,28,30,21,3,21,190)
+countryVec=c(&quot;China&quot;, &quot;Senegal&quot;, &quot;Spain&quot;, &quot;Norway&quot;, &quot;Peru&quot;, &quot;Chile&quot;, &quot;Venezuela&quot;,&quot;Singapur&quot;)
+educationVec=c(&quot;Bach&quot;, &quot;Bach&quot;, &quot;Bach&quot;, &quot;PhD&quot;,&quot;Master&quot;,&quot;Master&quot;,&quot;PhD&quot;,&quot;Bach&quot;)</code></pre>
+<p>Step 1: Creating data frame:</p>
+<pre class="r"><code>(tableStudents=data.frame(names=namesVec,
+                          ages=agesVec,
+                          country=countryVec,
+                          education=educationVec,
+                          stringsAsFactors=F))</code></pre>
+<pre><code>##       names ages   country education
+## 1      Qing   32     China      Bach
+## 2 Françoise  -33   Senegal      Bach
+## 3      Raúl   28     Spain      Bach
+## 4     Bjork   30    Norway       PhD
+## 5       Jim   21      Peru    Master
+## 6     Peter    3     Chile    Master
+## 7     Maria   21 Venezuela       PhD
+## 8    Rosita  190  Singapur      Bach</code></pre>
+<p>2.Once you have the data frame answer these questions:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Write <strong>algorithm</strong> to find wrong ages in the data frame.</p></li>
+<li><p>Use simple lines of code to <strong>transform</strong> your algorithm into R.</p></li>
+<li><p>Make a function <strong>badAgeDetector()</strong> that receives a dataframe and <em>returns the names</em> of the guys with wrong ages.</p></li>
+<li><p>Change <strong>badAgeDetector2()</strong> so that it receives a dataframe and <em>returns a dataframe with</em> the names of the guys with wrong ages.</p></li>
+<li><p>Change <strong>badAgeDetector3()</strong> so that it receives a dataframe and <em>returns a dataframe with</em> the names and ages of the guys with wrong ages.</p></li>
+<li><p>Change <strong>badAgeDetector4()</strong> so that it receives a dataframe and <em>returns a dataframe with</em> all the info from every guy with wrong ages.</p></li>
+</ol>
+<div id="a.-writing-algorithm" class="section level3">
+<h3>a. Writing algorithm:</h3>
+<pre class="r"><code># Read all the data
+# From the data get the ages
+# Save the ages in an object
+# Assume a lower and upper threshold
+# Read each age
+# Check if that age is above or below some thresholds
+  # Show whether the age is good or not.</code></pre>
 </div>
-</div>
-<div id="session-3-data-exploration-for-governance-analytics-in-r" class="section level1">
-<h1>Session 3: Data Exploration for Governance Analytics in R</h1>
-<div id="part-a-univariate-case" class="section level2">
-<h2>Part A: Univariate Case</h2>
-<p><a id="beginning"></a></p>
-<p>EDA is the most important stage to confirm or modify your research idea. If you are familiar with theories that suggests certain explanations to social outcomes, but you have never looked through the data associated with the phenomenon(a) of interest, you may get interesting surprises.</p>
-<p>Let’s work at the individual variable level, keeping in mind that your data has many variables (columns) which you do not need to explore if they are not currently considered in your research questions; it is also the case that you may not need all the cases (rows).</p>
-<p>EDA is done to closely know the behavior of the data; however, the possibility to detect that behavior depends on the nature of the data at hand. Also, keep in mind that while exploring your data, some data cleaning and formatting may need to be done, as well as some sub setting and slicing of your original data set. Real data sets do not come ready to be analyzed by the powerful functions R has.</p>
-<p>Let’s visit use some data. I visited this <a href="https://nces.ed.gov/ccd/schoolsearch/">website</a> to get all the data available for public schools in Washington (when prompted I named the file ‘wapubs.xlsx’).</p>
-<pre class="r"><code># we are opening excel file
-# we need to install &quot;readxl&quot;: install.packages(&quot;readxl&quot;)
-library(readxl)
+<div id="b.-transforming-your-algorithm-into-r." class="section level3">
+<h3>b. Transforming your algorithm into R.</h3>
+<pre class="r"><code># Read all the data
+theData=tableStudents</code></pre>
+<pre class="r"><code># From the data get the ages
+# Save the ages in an object
+guyAges=theData[,'ages'] # this ones are OK: theData$'ages'  /  theData$ages
+# this is bad: theData['ages']</code></pre>
+<pre class="r"><code># Assume a lower and upper threshold
+lowT=10
+upT=80</code></pre>
+<pre class="r"><code># pay attention to parentheses and curly braces
 
-# to ease reproducibility, store data online, and get data from the link to it.
-temp = tempfile(fileext = &quot;.xlsx&quot;) # use always with Excel
-dataURL &lt;- &quot;https://github.com/EvansDataScience/data/raw/master/wapubs.xlsx&quot; # link to data
-download.file(dataURL, destfile=temp, mode='wb')  # file will be downloaded temporarily
-
-# now get it:
-schoolPub = read_excel(temp, sheet =1)
-head(schoolPub,12)</code></pre>
-<p>The data is there, but the first rows are giving important information about the data, but it is not the data we need. Take a look at that information, then read it again telling R that the data table starts in the 11th row (where the column names are).</p>
-<pre class="r"><code>schoolPub = read_excel(temp, sheet =1,skip = 11)
-schoolPub = data.frame(schoolPub)  
-head(schoolPub)</code></pre>
-<p>The data has these columns:</p>
-<pre class="r"><code>str(schoolPub)</code></pre>
-<p>To have a better reading of the variable names always use:</p>
-<pre class="r"><code>names(schoolPub)</code></pre>
-<p>If you are not familiar with the variable names, you can find this <a href="http://nces.ed.gov/ccd/commonfiles/glossary.asp">glossary</a> useful.</p>
-<p>Unless you are familiar with a particular file, you will find different challenges to explore the data. A good data exploration depends on properly identifying the nature of each variable:</p>
-<ul>
-<li>Categorical
-<ul>
-<li><a href="#Dichotomous">Dichotomous</a></li>
-<li>Polytomous
-<ul>
-<li><a href="#Nordinal">Non-Ordinal</a></li>
-<li><a href="#Ordinal">Ordinal</a></li>
-</ul></li>
-</ul></li>
-<li>Numerical
-<ul>
-<li><a href="#Counts">Counts</a></li>
-<li><a href="#Measurements">Measurements</a> (ratio or interval scale)</li>
-</ul></li>
-</ul>
-<p>I will also pay attention to the concept of <a href="#outliers">outliers</a>, at the end of this part.</p>
-<hr />
-<p><a id="Dichotomous"></a></p>
-</div>
-<div id="exploring-dichotomous-data" class="section level2">
-<h2><span style="color:red"> Exploring Dichotomous data</span></h2>
-<p>Let’s turn our attention to schools whose percentage of low-income students is at least 40 percent. This is the distribution of its values:</p>
-<pre class="r"><code>table(schoolPub$Title.1.School.Wide.)</code></pre>
-<p>If you prefer to see relative frequencies:</p>
-<pre class="r"><code>prop.table(table(schoolPub$Title.1.School.Wide.))</code></pre>
-<p>From these results, you have no doubts that there are much more schools of this kind than of the other.</p>
-<p>Sometimes, it is useful (not in this case) to run a <span class="math inline">\(\chi^2\)</span> test to see if the differences are significant:</p>
-<pre class="r"><code>distribution=table(schoolPub$Title.1.School.Wide.)
-chisq.test(distribution) # notice the the input is a table</code></pre>
-<p>The result above is telling you that the probability that this distribution behaves like a uniform distribution is very low; so a safe <em>decision</em> is to assume that the differences in the frequencies are significant.</p>
-<p>The above results included the <em>not applicable</em> symbol. We can get rid of it and re test:</p>
-<pre class="r"><code>symbolsForNA=c('†') # you can put here the symbols you want to convert to NA
-schoolPub[-1]=lapply(schoolPub[-1],
-                 function(x) 
-                   replace(x,x%in%symbolsForNA, NA))</code></pre>
-<p>We should get a clean frequency table:</p>
-<pre class="r"><code>table(schoolPub$Title.1.School.Wide.)</code></pre>
-<pre class="r"><code># RE testing
-distribution=table(schoolPub$Title.1.School.Wide.)
-chisq.test(distribution)</code></pre>
-<p>The equal distribution of frequencies is rejected again.</p>
-<div id="central-measurement-and-dispersion" class="section level3">
-<h3>Central measurement and dispersion</h3>
-<p>The <strong>mode</strong> is the measure of centrality for dichotomous values. You can detect it just by watching the frequency, but let’s make the computation:</p>
-<pre class="r"><code># getting the highest count:
-modeCount=max(distribution)
-# matching with the count
-mode=distribution[distribution==modeCount]
-# result
-names(mode)</code></pre>
-<p>Since it works, well, let’s make a function:</p>
-<pre class="r"><code>getMode=function(aColumn){
-  freqTable=table(aColumn)
-  maxFrequency=max(freqTable)
-  names(freqTable[freqTable==maxFrequency])
+for (value in guyAges){                   # Read each age
+    if (lowT&lt;=value &amp; value&lt;=upT){        # Check if that age is above or below some thresholds
+        print ('reading a good value' )   # Show whether the age is good or not.
+    }else{
+        print (paste('here is a bad one:',value)) # Show whether the age is good or not.
+    }
 }</code></pre>
-<p><a href="#head">Go to begining</a></p>
-<hr />
-</div>
-</div>
-<div id="eda-for-non-ordinal-polytomous-variables" class="section level2">
-<h2><span style="color:red"> EDA for non-ordinal polytomous variables</span></h2>
-<p>Let’s pay attention to the school location:</p>
-<pre class="r"><code>table(schoolPub$Locale.)</code></pre>
-<p>We have a weird category “N”. Before making any decision, let’s try to find out what is going on in that row:</p>
-<pre class="r"><code>schoolPub[schoolPub$Locale.=='N',]</code></pre>
-<p>You see many <em>not applicable</em> symbols in the school categories. As it is not clear why this school is here, we can just recode that <em>cell</em> as missing:</p>
-<pre class="r"><code>schoolPub[1194,'Locale.']=NA</code></pre>
-<p>When we applied <em>str()</em> above, you realized that this column is read as a character. Let’s turn it into a category:</p>
-<pre class="r"><code>schoolPub$Locale.=as.factor(schoolPub$Locale.) # no column was created, just overwritten</code></pre>
-<p>Now, let’s continue the exploration.</p>
-<div id="central-value" class="section level3">
-<h3>Central value</h3>
-<p>The central value of polytomous variables (and dichotomous) is the mode. Let’s use our function <em>getMode</em>:</p>
-<pre class="r"><code>var=schoolPub$Locale.
-getMode(var)</code></pre>
-</div>
-<div id="dispersion" class="section level3">
-<h3>Dispersion</h3>
-<p>The measure of dispersion is used to inform if the central value is <em>representative</em>. One way to quantify this concept in polytomous variables is via the Gini Index here, which is present in the versatile package <em>DescTools</em>:</p>
-<pre class="r"><code>library(DescTools) # install this first!
-Gini(table(var))</code></pre>
-<p>The closer the index gets to zero would mean the mode loses salience, the closer to 1, the more salient it is. The Gini is not the best way to measure inequality, but worth using it for comparative purposes<sup><a href="#fn1" id="ref1">1</a></sup>.</p>
-<p>The above result confirms that there is not one value that has the greater share; but we do not have an equal distribution, do we?</p>
-<pre class="r"><code>chisq.test(table(var))</code></pre>
-<p>From the results above, the most probable is that this variable does not follow a uniform distribution.</p>
-<p>Let’s see a plot using basic R graphical capabilities:</p>
-<pre class="r"><code># a barplot need the frequency table!
-barplot(table(var),las=2) # &quot;las&quot; is critical here</code></pre>
-<p>We could do a little better:</p>
-<pre class="r"><code># highlighting by customizing colors:
-tableVar=table(var)
-colorMode=rep('gray',length(tableVar))
-colorMode[7]='red'
-# and reducing ticks labels:
-shrinkFactor=0.6
-barplot(table(var),las=2,col=colorMode,cex.names = shrinkFactor) </code></pre>
-<p>Some more info for the plot:</p>
-<pre class="r"><code>barplot(table(var),las=2,col=colorMode,cex.names = shrinkFactor,
-        main=&quot;Title of the plot&quot;,
-        xlab=&quot;Category&quot;,
-        ylab=&quot;Count of the levels&quot;) </code></pre>
-<p>In the previous plot, you may need to do more work because the label of the X-Axis is not well positioned.</p>
-<p>Of course, people love R for plotting because of its <strong>ggplot</strong> package, which gives you more flexibility.</p>
-<pre class="r"><code># Install &quot;ggplot2&quot;, then:
-library(ggplot2)</code></pre>
-<p>Making graphics this way take some further steps, you need to evaluate if the time spent is worth the pain. Let’s start ‘dirty’:</p>
-<pre class="r"><code>## THIS WILL NOT WORK
-# Tell what data to use, and what variable(s) to use:
-base=ggplot(schoolPub,aes(Locale.))
-# Tell what kind of plot:
-base + geom_bar(fill=colorMode) # using the previous map we did</code></pre>
-<p>Yes, unfortunately, by default, <em>ggplot</em> will plot the NA found (base graphic would omit it by default) and that will cause an error because the size of our <em>colorMode</em> palette is smaller did not consider the category NA. Then, we need to to eliminate the NAs:</p>
-<pre class="r"><code>schoolPub_NA=schoolPub[!is.na(schoolPub$Locale.),]
-base=ggplot(schoolPub_NA,aes(Locale.))
-# Tell what kind of plot:
-base + geom_bar(fill=colorMode) </code></pre>
-<p>Well, at least you got the <em>grid</em> for free. But you still need to make more work on it. In <em>ggplot</em> (grammar of graphics) you keep adding elements:</p>
-<pre class="r"><code>step1=base + geom_bar(fill=colorMode)  # saving the previous plot
-# adding the labels in vertical:
-step1 + theme(axis.text.x=element_text(angle=90, hjust=1)) #'1' for right-justified.</code></pre>
-<p>You may want to customize the plot titles and axis labels:</p>
-<pre class="r"><code># more customizing
-step2= step1 + theme(axis.text.x=element_text(angle=90, hjust=1))
+<pre><code>## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: -33&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: 3&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: 190&quot;</code></pre>
+<pre class="r"><code>##ANOTHER STRATEGY
 
-# preparing list of titles:
-allTitles=list(title=&quot;Title of the plot&quot;, x = 'Category', y='COUNT of each level')
-step2 + labs(allTitles)</code></pre>
-<p>By default, <em>ggplot</em> will plot the title to the left. If you need to center it:</p>
-<pre class="r"><code>step3=step2 + labs(allTitles)
+goodAges=lowT:upT
 
-# adding command to center title:  
-step3  +  theme(plot.title = element_text(hjust = 0.5))</code></pre>
-<p><a href="#head">Go to begining</a></p>
-<hr />
-</div>
-</div>
-<div id="eda-for-ordinal-categorical-variables" class="section level2">
-<h2><span style="color:red"> EDA for ordinal categorical variables</span></h2>
-<p>Let’s consider for this section the variable that tells us the highest grade offered in a school. A simple exploration gives:</p>
-<pre class="r"><code>table(schoolPub$High.Grade.)</code></pre>
-<p>The categories are clean. But NOT in the right ORDER. Then, we need to transform the column into an ordinal:</p>
-<pre class="r"><code># getting original levels:
-levelCat=names(table(schoolPub$High.Grade.))
+for (value in guyAges){                     # Read each age
+    if (value %in% goodAges){               # Check if that age is above or below some thresholds
+        print ('reading a good value' )     # Show whether the age is good or not.
+    }else{
+        print (paste('here is a bad one:',value)) # Show whether the age is good or not.
+    }
+}</code></pre>
+<pre><code>## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: -33&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: 3&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;here is a bad one: 190&quot;</code></pre>
+<pre class="r"><code>##EVEN ANOTHER STRATEGY
 
-# reordering original levels (PK and KG are first)
-# the levels start with the last two levels: tail(levelCat,2)
-# but in reverse order: rev(tail(levelCat,2))
-# the old first elements without the last two ones: head(levelCat,-2)
-levelCat=c(rev(tail(levelCat,2)),head(levelCat,-2))
+goodAges=lowT:upT
 
-# this is what we have now:
-levelCat</code></pre>
-<p>Now, we can format this into an ordinal variable:</p>
-<pre class="r"><code># Formatting:
-schoolPub$High.Grade.=factor(schoolPub$High.Grade.,
-                             levels = levelCat,
-                             labels=levelCat,ordered=T)</code></pre>
-<p>Then, this is the right distribution:</p>
-<pre class="r"><code>table(schoolPub$High.Grade.)</code></pre>
-<div id="central-value-1" class="section level3">
-<h3>Central Value:</h3>
-<p>Let’s get the <em>mode</em>:</p>
-<pre class="r"><code># Applying our function:
-getMode(schoolPub$High.Grade.)</code></pre>
-<p>An important central value in ordered categories is the <strong>median</strong> (this is from <em>DescTools</em> package, too):</p>
-<pre class="r"><code>Median(schoolPub$High.Grade.,na.rm = T)</code></pre>
-<p>The function <em>Median</em> from <em>DescTools</em> allows you to compute the median from ordinal values. The standard median from base R cannot do that, unless you coerce them into numbers:</p>
-<pre class="r"><code># what about:
-median(as.numeric(schoolPub$High.Grade.),na.rm=T)</code></pre>
-<p>Is this a different result? NO. When we converted to number, <em>PK</em> and <em>KG</em> turned into <em>1</em> and <em>2</em>, respectively. Then the label <em>08</em> turned into <em>10</em>. You can always confirm the median this way:</p>
-<pre class="r"><code># confirm:
-cumsum(prop.table(table(schoolPub$High.Grade.)))</code></pre>
-<p>It confirms that 50% of the schools offer at most 8th grade.</p>
+for (value in guyAges){               # Read each age
+    if (value %in% goodAges){         # Check if that age is above or below some thresholds
+        print ('reading a good value' )      # Show whether the age is good or not.
+    }else{
+        print (tableStudents[tableStudents['ages']==value,])# show rows of the data frame with wrong ages
+    }
+}</code></pre>
+<pre><code>## [1] &quot;reading a good value&quot;
+##       names ages country education
+## 2 Françoise  -33 Senegal      Bach
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+## [1] &quot;reading a good value&quot;
+##   names ages country education
+## 6 Peter    3   Chile    Master
+## [1] &quot;reading a good value&quot;
+##    names ages  country education
+## 8 Rosita  190 Singapur      Bach</code></pre>
 </div>
-<div id="dispersion-1" class="section level3">
-<h3>Dispersion</h3>
-<p>Let’s see the Gini’s:</p>
-<pre class="r"><code>Gini(table(schoolPub$High.Grade.))</code></pre>
-<p>Gini tells that there is some concentration. The plot should help us get a better idea:</p>
-<pre class="r"><code>data=schoolPub[!is.na(schoolPub$High.Grade.),]
-c = ggplot(data,aes(High.Grade.))
-c + geom_bar() </code></pre>
-<p>There was one mode, but a few other competing categories with high counts, these 4 categories concentrated much more than the 11 remaining combined.</p>
-</div>
-<div id="skewness" class="section level3">
-<h3>Skewness</h3>
-<p>We can not compute a proper measure of symmetry as there is no distance among the categories, but we know there is lack of symmetry because the two central values are different: the mode is to the right of the median (we expect a longer left tail).</p>
-<p>The boxplot is a good way to show symmetry:</p>
-<pre class="r"><code># 'y' has to be numeric
-# 'x' is 1 when you need to see one boxplot (no variable to split 'y')
-base=ggplot(data, aes(x=1, y=as.numeric(High.Grade.)))
-base + geom_boxplot() + coord_flip() # to show it horizontally</code></pre>
-<p>The axis labels are the default. Then:</p>
-<pre class="r"><code># to see the ordinal levels
-box1 = base + geom_boxplot() + coord_flip()
-box1 + scale_y_continuous(labels= levelCat,breaks=1:15)</code></pre>
-<p><a href="#head">Go to begining</a></p>
-<hr />
-</div>
-</div>
-<div id="eda-for-counts" class="section level2">
-<h2><span style="color:red"> EDA for Counts</span></h2>
-<p>I have a file about Supplemental Nutrition Assistance Program (SNAP) beneficiaries data by counties, in a <em>cross sectional fashion</em>, let me use it here:</p>
-<pre class="r"><code>temp = tempfile(fileext = &quot;.xls&quot;) # use always with Excel
-dataURL &lt;- &quot;https://github.com/EvansDataScience/data/raw/master/cntysnap.xls&quot; # link to data
-download.file(dataURL, destfile=temp, mode='wb')  # file will be downloaded temporarily
+<div id="c.-function-badagedetector-that-receives-a-dataframe-and-returns-the-names-of-the-guys-with-wrong-ages" class="section level3">
+<h3>c. Function <em>badAgeDetector()</em> that receives a dataframe and <em>returns the names</em> of the guys with wrong ages</h3>
+<pre class="r"><code># The function needs these fields as inputs:
+# DF is the dataframe
+# ageColumnName is the name of the column of ages
+# namesColumName is the name of the column of names
+# lowT and upT are the thresholds
 
-# now get it:
-snapBen = read_excel(temp, sheet =1,skip=2)
-snapBen=data.frame(snapBen)
-head(snapBen)</code></pre>
-<p>As usual:</p>
-<pre class="r"><code>str(snapBen)</code></pre>
-<p>…and:</p>
-<pre class="r"><code>names(snapBen)</code></pre>
-<p>If a county has a FIPS code equal to <strong>0</strong>, then that row is informing about the State. Keeping the counties only:</p>
-<pre class="r"><code>snapBenCounties=snapBen[snapBen$County.FIPS.code!=0,]</code></pre>
-<div id="centrality" class="section level3">
-<h3>Centrality</h3>
-<p>In this case, <em>summary()</em> does give more information, we can get mean and median, and the quartiles:</p>
-<pre class="r"><code>summary(snapBenCounties)</code></pre>
-</div>
-<div id="skewness-1" class="section level3">
-<h3>Skewness</h3>
-<p>In numeric data it is easier to evaluate symmetry, we want to know if the bulk of the data is biasing towards a particular direction every year.</p>
-<p>Computing skewness requires the use of the library <em>moments</em>.</p>
-<pre class="r"><code>library(moments) # you have installed it, right?</code></pre>
-<p>Different from the function <em>summary()</em>, most functions that operate on numbers require that you subset the data frame so that only numeric values are input.</p>
-<pre class="r"><code># na.rm is a MUST, most of these functions do not work with missing values present.
-skewness(snapBenCounties[,c(4:23)],na.rm = T) </code></pre>
-<p>R returned a vector with the skewness coefficients for every year for the country at the county level. All are positive, which means that every year the right tail is salient: there are some counties, not the majority, that have much more beneficiaries than the rest.</p>
-</div>
-<div id="kurtosis" class="section level3">
-<h3>Kurtosis</h3>
-<p>To complete the picture of what is going on with this variable, we should know if the values around the <em>mode</em> are salient or not. The more salient they are the distribution is called leptokurtic; the less salient, platycurtic (or mesokurtic if it behaves as a normal distribution). Let’s do it using the function <em>kurtosis</em> from the previous package:</p>
-<pre class="r"><code>kurtosis(snapBenCounties[,c(4:23)],na.rm = T)</code></pre>
-<p>Let’s plot what we have so far:</p>
-<pre class="r"><code># getting the 'years'
-years=names(kurtosis(snapBenCounties[,c(4:23)],na.rm = T))
+badAgeDetector=function(DF,ageColumnName,namesColumName,lowT=10,upT=80){ # Read all the data
 
-#'years' come with the name 'July' attached.
-# we use the 'str_extract' function from'stringr' package 
-# with the REGULAR EXPRESSION (RegEx): \\d+ (sequence of numbers)
-# to extract any combination of numbers in every element in 'years'
-library(stringr)
-years=str_extract(years, &quot;\\d+&quot;)
+    goodAges=lowT:upT# Assume a lower and upper threshold
+    
+    # subset the original DF:keep the rows whose ages are NOT good
+    DFdetected=DF[!DF[,ageColumnName] %in% goodAges,] # this style replaces 'for' and 'if'
+    
+    return (DFdetected[,namesColumName])  # return the names (as vector!) 
+}</code></pre>
+<pre class="r"><code># You use the function filling each field with the appropriate argument:
 
-# now we continue:
-kt=kurtosis(snapBenCounties[,c(4:23)],na.rm = T)
-sk=skewness(snapBenCounties[,c(4:23)],na.rm = T)
-par(mfrow=c(2,1))
-plot(years,sk,type = 'l',col='blue',ylab='skewness')
-plot(years,kt,type = 'l',col='red',ylab='kurtosis')</code></pre>
-<p>The behavior of kurtosis is always positive, too. Both are very similar, and extremely large by the second half of the 1990s.</p>
-<p>It would a good idea to plot the original data (not the coefficients) per year. We can use <em>ggplot</em> for that, but we have to change the shape of the data table.</p>
-<p>Notice that the data is currently in the <em>wide</em> format:</p>
-<pre class="r"><code>head(snapBenCounties)</code></pre>
-<p>We call it <em>wide</em> because the value of interest is distributed across each row. That is, each column represents a different year and there is one county per row. To use <em>ggplot</em> you should transform to <em>long</em> format, where all the information in the rows that represented every year will be transposed. Let’s reshape:</p>
-<pre class="r"><code>snapBenCountiesLong &lt;- reshape(snapBenCounties, 
-  varying = names(snapBenCounties)[4:23], # here is the data in wide
-  v.names = &quot;recipients&quot;, # new column with values
-  times = str_extract(names(snapBenCounties)[4:23], &quot;\\d+&quot;), #names for flag - we did it similarly before
-  direction = &quot;long&quot;)</code></pre>
-<p>Let’s see how it looks:</p>
-<pre class="r"><code>row.names(snapBenCountiesLong)=NULL # we should reset the row names
-head(snapBenCountiesLong)</code></pre>
-<p>Time to plot histograms (using all data per year):</p>
-<pre class="r"><code>library(scales) # for the 'commas;
-
-
-h1= ggplot(snapBenCountiesLong,aes(x = recipients))  
-h1= h1 + geom_histogram(bins=50) + facet_wrap(~time,scales = &quot;free_x&quot;) 
-h1= h1 + theme(axis.text.x=element_text(angle=60, hjust=1,size = 5)) 
-h1= h1 + scale_x_continuous(labels = comma)
-h1 </code></pre>
-<p>Taking a look at boxplots:</p>
-<pre class="r"><code>bp &lt;- ggplot(snapBenCountiesLong, aes(x = time, y = recipients)) + geom_boxplot()
-bp + theme(axis.text.x=element_text(angle=90, hjust=1))</code></pre>
-<p>What about highlighting WA state in a particular year:</p>
-<pre class="r"><code>snap2013=snapBenCountiesLong[snapBenCountiesLong$time=='2013',]
-target=53 # WA code
-categories=names(table(snap2013$State.FIPS.code))
-cols=rep('red',length(categories))
-i=0
-for (cat in categories){
-  i=i+1
-  if (cat==target){
-    cols[i]='blue'
-  }
-}
-
-
-bp = ggplot(snap2013, aes(x = as.factor(snap2013$State.FIPS.code), y = recipients)) + geom_boxplot(fill=cols,lwd=0.1,outlier.size = 1)
-bp + theme(axis.text.x=element_text(angle=90, hjust=1))</code></pre>
-<p><a href="#head">Go to begining</a></p>
-<hr />
-<p><a id="Measurements"></a></p>
+badAgeDetector(DF=theData,ageColumnName='ages',namesColumName=&quot;names&quot;)</code></pre>
+<pre><code>## [1] &quot;Françoise&quot; &quot;Peter&quot;     &quot;Rosita&quot;</code></pre>
 </div>
-</div>
-<div id="eda-for-measurements" class="section level2">
-<h2><span style="color:blue"> EDA for measurements</span></h2>
-<p>Let use a data set on 2015 Poverty and Median Household Income Estimates per county in the USA.</p>
-<pre class="r"><code>temp = tempfile(fileext = &quot;.xls&quot;) # use always with Excel
-dataURL &lt;- &quot;https://github.com/EvansDataScience/data/raw/master/est15ALL.xls&quot; # link to data
-download.file(dataURL, destfile=temp, mode='wb')  # file will be downloaded temporarily
+<div id="d.-function-badagedetector2-that-receives-a-dataframe-and-returns-a-dataframe-with-the-names-of-the-guys-with-wrong-ages." class="section level3">
+<h3>d. Function <em>badAgeDetector2()</em> that receives a dataframe and <em>returns a dataframe with</em> the names of the guys with wrong ages.</h3>
+<pre class="r"><code># only change is the way we send the output:
 
-# now get it:
-income=read_excel(temp,1,skip=3,na='.')[,c(1:4,23)]
-# remember 'readxl' returns a tibble, so:
-income=as.data.frame(income)
-names(income)</code></pre>
-<p>The <em>County FIPS Code</em> is useful to keep just the counties:</p>
-<pre class="r"><code>incomeCounties=income[income$'County FIPS Code'!='000',]
-head(incomeCounties)</code></pre>
-<p>Checking data types:</p>
-<pre class="r"><code>str(incomeCounties)</code></pre>
-<div id="centrality-1" class="section level3">
-<h3>Centrality</h3>
-<p>As usual:</p>
-<pre class="r"><code>summary(incomeCounties$'Median Household Income')</code></pre>
+badAgeDetector2=function(DF,ageColumnName,namesColumName,lowT=10,upT=80){
+    
+    goodAges=lowT:upT
+    DFdetected=DF[!DF[,ageColumnName] %in% goodAges,]
+    
+    return (DFdetected[namesColumName])  # no comma is a data frame!
+}</code></pre>
+<pre class="r"><code>badAgeDetector2(DF=theData,ageColumnName='ages',namesColumName=&quot;names&quot;)</code></pre>
+<pre><code>##       names
+## 2 Françoise
+## 6     Peter
+## 8    Rosita</code></pre>
 </div>
-<div id="dispersion-2" class="section level3">
-<h3>Dispersion</h3>
-<p>We can get the standard deviation and the coefficient of variation:</p>
-<pre class="r"><code>sd(incomeCounties$'Median Household Income',na.rm = T)</code></pre>
-<pre class="r"><code># coefficient of variation
-sd(incomeCounties$'Median Household Income',na.rm = T)/mean(incomeCounties$'Median Household Income',na.rm = T)</code></pre>
+<div id="e.-function-badagedetector3-that-receives-a-dataframe-and-returns-a-dataframe-with-the-names-and-ages-of-the-guys-with-wrong-ages." class="section level3">
+<h3>e. Function <em>badAgeDetector3()</em> that receives a dataframe and <em>returns a dataframe with</em> the names and ages of the guys with wrong ages.</h3>
+<pre class="r"><code># only change is the way we send the output:
+badAgeDetector3=function(DF,ageColumnName,namesColumName,lowT=10,upT=80){
+    
+    goodAges=lowT:upT
+    DFdetected=DF[!DF[,ageColumnName] %in% goodAges,]
+    return (DFdetected[c(namesColumName,ageColumnName)]) # comma is indiferent before c()
+}</code></pre>
+<pre class="r"><code>badAgeDetector3(DF=theData,ageColumnName='ages',namesColumName=&quot;names&quot;)</code></pre>
+<pre><code>##       names ages
+## 2 Françoise  -33
+## 6     Peter    3
+## 8    Rosita  190</code></pre>
 </div>
-<div id="skewness-2" class="section level3">
-<h3>Skewness</h3>
-<pre class="r"><code>skewness(incomeCounties$'Median Household Income',na.rm = T)</code></pre>
-</div>
-<div id="kurtosis-1" class="section level3">
-<h3>Kurtosis</h3>
-<pre class="r"><code>kurtosis(incomeCounties$'Median Household Income',na.rm = T) # Pearson</code></pre>
-<pre class="r"><code>Kurt(incomeCounties$'Median Household Income',na.rm = T) # Fisher (as in Python)</code></pre>
-<p>We can now pay more attention to the histogram, and how to show some info on it, like its normal curve:</p>
-<pre class="r"><code># keeping non missing:
-data=incomeCounties[is.finite(incomeCounties$'Median Household Income'),]
-#
-# selecting a var:
-var=data$'Median Household Income'
-#
-# saving mean and sd:
-mnVar=mean(var,na.rm = T)
-sdVar=sd(var,na.rm = T)
-#
-#plotting
-base = ggplot(data, aes(x=var))
-hist = base + geom_histogram(fill=&quot;green&quot;, 
-                             color='grey',
-                          aes(y=..density..))
-#
-histAndNormal = hist + stat_function(fun=dnorm,
-                                     color=&quot;red&quot;,
-                                     args=list(mean=mnVar,sd=sdVar))
-#
-histAndNormal</code></pre>
-<p>The histogram with central measures…</p>
-<pre class="r"><code>mdVar=median(var) # the median 
+<div id="f.-function-badagedetector4-that-receives-a-dataframe-and-returns-a-dataframe-with-all-the-info-from-every-guy-with-wrong-ages." class="section level3">
+<h3>f. Function <em>badAgeDetector4()</em> that receives a dataframe and <em>returns a dataframe with</em> all the info from every guy with wrong ages.</h3>
+<pre class="r"><code># only change is the way we send the output:
 
-# vline vertical line
-histAndNormal + geom_vline(aes(xintercept = mnVar,colour=&quot;mean&quot;),
-                           show.legend  = TRUE) + 
-                geom_vline(aes(xintercept = mdVar,colour=&quot;median&quot;),
-                           show.legend  = TRUE) + 
-                scale_color_manual(name = &quot;centrals&quot;, 
-                                   values = c(median = &quot;blue&quot;, mean = &quot;red&quot;))</code></pre>
-<p>Let’s focus in a couple of states:</p>
-<pre class="r"><code>waca=c('WA','CA')
-countiesWaCA=incomeCounties[incomeCounties$'Postal Code'%in% waca,]</code></pre>
-<p>And plot the data about them:</p>
-<pre class="r"><code>data=countiesWaCA
-var=data$'Median Household Income'
-group=data$'Postal Code'
-#
-# here it is:
-ggplot(data, aes(x=var, fill=as.factor(group))) +  geom_histogram()</code></pre>
-<hr />
-<p><a id="outliers"></a></p>
-</div>
-</div>
-<div id="outliers-in-data-exploration" class="section level2">
-<h2>Outliers in data exploration</h2>
-<p>Real data comes most of the time with outliers. These are not bad things, it is just the identification that a value seems to be ‘different’ than the rest. So, the problem to find outliers is also the problem to define what makes a majority of ‘similars’. This is crucial point in governance analytics, as the ‘common good’ becomes a very subjective concept in computational terms.</p>
-<p>For this topic, we will use the data if SNAP previously explored (particularly the subset at county level).</p>
-<p>Let’s pay attention to the year 2013 and get some descriptives first:</p>
-<pre class="r"><code>snapBenCounties$July.2013=as.numeric(snapBenCounties$July.2013)
-summary(snapBenCounties$July.2013)</code></pre>
-<p>Let’s pay attention to the quartiles (25th and 75th percentile). These are elements in boxplots, and their difference, the <em>interquartile range</em> (IQR), is used to identify outliers numerically and visually:</p>
-<pre class="r"><code>(bp=boxplot(snapBenCounties$July.2013,horizontal = T))</code></pre>
-<p>The command above not only plotted the boxplot, but saved several <em>values</em> used by R to build the boxplot:</p>
-<pre class="r"><code># these are the ouliers in the boxplot
-bp$stats</code></pre>
-<p>The first and last elements are the caps of the boxplot, the second and fourth are the limits of the box (the quartlies), the third is the median.</p>
-<p>While the highest values cap is 24030; then all the values greater than this one will be considered outliers.</p>
-<p>You know how this happened, right?..if not, let me refresh the process. First, the IQR (inter quartle range) is needed:</p>
-<pre class="r"><code># The 'caps' are computed usng the interquartle range (IQR).
-# The IQR is the distance between the first and third quartile;
-# or, in other terms, the distance between the 75th and 25th percentiles:
-(iqr=IQR(snapBenCounties$July.2013,na.rm = T)) </code></pre>
-<p>Then, once the IQR is computed, it is multiplied by 1.5; the result is added/substracted to the 75th/25th percentile:</p>
-<pre class="r"><code>q75=bp$stats[4]
-(capHigh = q75 + iqr*1.5)</code></pre>
-<pre class="r"><code>q25=bp$stats[2]
-(capLow=q25 - iqr*1.5)</code></pre>
-<p>Any value above <em>capHigh</em> or below <em>capLow</em> will be considered a possible outlier.</p>
-<p>According to this process, we do not have outliers in the lowest values, but several in the upper ones. If it is so, the amount of outlying values is:</p>
-<pre class="r"><code>length(bp$out)</code></pre>
-<p>What is this approach to find outliers?</p>
-<p>The idea is to see what values are far from the ‘mass’ (between the 25th and 75th percentiles) but for that, there is an assumption that the mass is around an ‘average’ value (the median), and that the outliers are symmetrically distant from that average. In this case that distance is the IQR multiplied by some constant. You can increase the constant to find extreme outliers.</p>
-<p>Instead of using the median, we could try the mean; but then we need to adapt the approach so that instead of using IQR, we use the standard deviation instead:</p>
-<pre class="r"><code>StdDev=sd(snapBenCounties$July.2013,na.rm = T)
-Mean=mean(snapBenCounties$July.2013,na.rm = T)
+badAgeDetector4=function(DF,ageColumnName,namesColumName,lowT=10,upT=80){
 
-# Then
-(lowCapT=Mean-2*StdDev)</code></pre>
-<pre class="r"><code># and 
-(upCapT=Mean+2*StdDev)</code></pre>
-<p>This interval will give us less outliers, and again, all of them are in the right tail. The amount of outliers here will be:</p>
-<pre class="r"><code>sum(snapBenCounties$July.2013&gt;upCapT,na.rm = T)</code></pre>
-<p>We could represent this new ‘cap’ in the boxplot, computing the factor that multiplies the IQR (which determines how far the plot whiskers extend out from the box):</p>
-<pre class="r"><code>(r=(upCapT-q75)/iqr)</code></pre>
-<p>Then,</p>
-<pre class="r"><code>bp=boxplot(snapBenCounties$July.2013,horizontal = T,range=r)</code></pre>
-<p>Are we satisfied? This is the original data:</p>
-<pre class="r"><code>hist(snapBenCounties$July.2013)</code></pre>
-<p>We have a very asymetric distribution; so we should be careful. If this were a real long-tail distribution, using our previous techniques may fail detecting outliers, specially in the lower tail. Let me see how it looks when I transform the values into logarithmic ones:</p>
-<pre class="r"><code>hist(log(snapBenCounties$July.2013))</code></pre>
-<p>Let’s see the “new” outliers:</p>
-<pre class="r"><code>bplog=boxplot(log(snapBenCounties$July.2013),horizontal = T)</code></pre>
-<p>This is the amount of outliers detected, this time in both sides:</p>
-<pre class="r"><code># This is the amount of outliers detected, this time in both sides:
-length(bplog$out)</code></pre>
-<p>We will use the latter approach to identify if county is an outlier. That is, I will create a new column with “flags”:</p>
-<pre class="r"><code># this is a complex recode, we should use the &quot;recode&quot; function from the &quot;car&quot; package.
-# 0 means no outliers, 1 lower and 2 upper outliers.
-library(car)
-dataLog=log(snapBenCounties$July.2013)
-low=bplog$stats[1]
-up=bplog$stats[5]
-snapBenCounties$out2013=ifelse(dataLog&lt;low,1,ifelse(dataLog&gt;up,2,0))
-
-# this is our new var:
-table(snapBenCounties$out2013)</code></pre>
-<p>The good thing about <strong>ifelse</strong> is that it does not need you control for missingness (it gives an NA immediately when the logic test finds a missing value).</p>
-<p>Then, I have these interesting columns now:</p>
-<pre class="r"><code>head(snapBenCounties[c('Name','out2013')])</code></pre>
-<p>Counties names can repeat, but not States. We have no states in the columns, so we create it from the column <em>Name</em>:</p>
-<pre class="r"><code>library(tidyr)
-snapBenCounties=separate(data = snapBenCounties, 
-                         col = Name,
-                         into = c(&quot;county&quot;, &quot;state&quot;), 
-                         sep = &quot;\\, &quot;)</code></pre>
-<p>Check what we got:</p>
-<pre class="r"><code>head(snapBenCounties)</code></pre>
-<p>Now we can count:</p>
-<pre class="r"><code>table(snapBenCounties[c('state','out2013')])</code></pre>
-<p>This tells you an idea of the distributions of counties. For example, WA has one county whose number of beneficiaries are very high (compared to the rest of the country counties), Nebraska has the majority of counties that have very few beneficiaries.</p>
-<p>We can ask more questions using set operations:</p>
-<pre class="r"><code># we need to control NAs:
-normStates=na.omit(snapBenCounties$state[snapBenCounties$out2013==0])
-upOutStates=na.omit(snapBenCounties$state[snapBenCounties$out2013==2])
-lowOutStates=na.omit(snapBenCounties$state[snapBenCounties$out2013==1])</code></pre>
-<p>Let’s make some questions:</p>
-<ul>
-<li>States with counties in the upper outliers but that are not present in the lower ones:</li>
-</ul>
-<pre class="r"><code>setdiff(upOutStates,lowOutStates)</code></pre>
-<ul>
-<li>States that have counties in the upper and the lower outliers:</li>
-</ul>
-<pre class="r"><code>intersect(upOutStates,lowOutStates)</code></pre>
-<ul>
-<li>States that have counties either in the upper or the lower outliers (not in both):</li>
-</ul>
-<pre class="r"><code>union(setdiff(upOutStates,lowOutStates),setdiff(lowOutStates,upOutStates))</code></pre>
-<ul>
-<li>States that have no outlying counties.</li>
-</ul>
-<pre class="r"><code>setdiff(normStates, union(lowOutStates,upOutStates))</code></pre>
-<hr />
-<div id="footnotes" class="section level3">
-<h3>Footnotes</h3>
-<p><sup id="fn1">1</sup>Take a look to this <a href="https://inequality.org/research/unequal-americas-income-distribution/">blog post</a>. <a href="#ref1">↑</a></p>
-<hr />
-<ul>
-<li><a href="#beginning">Go to page beginning</a></li>
-<li><a href="https://rawgit.com/EvansDataScience/govanalyticsweb/master/R/R3B_BivariateEDA.html">Go to PART B: Bivariate EDA in R</a></li>
-<li><a href="https://evansdatascience.github.io/GovernanceAnalytics/">Go to Course schedule</a></li>
-</ul>
-</div>
+    goodAges=lowT:upT
+    DFdetected=DF[!DF[,ageColumnName] %in% goodAges,]
+    return (DFdetected)
+}</code></pre>
+<pre class="r"><code>badAgeDetector4(DF=theData,ageColumnName='ages',namesColumName=&quot;names&quot;)</code></pre>
+<pre><code>##       names ages  country education
+## 2 Françoise  -33  Senegal      Bach
+## 6     Peter    3    Chile    Master
+## 8    Rosita  190 Singapur      Bach</code></pre>
 </div>
 </div>
 

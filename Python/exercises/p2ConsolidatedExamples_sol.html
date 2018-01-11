@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>P3A_UnivariateEDA</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>p2ConsolidatedExamples_sol</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11775,7 +11775,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<center><img src="http://i.imgur.com/sSaOozN.png" width="500"></center>
+<h1 id="Practicing-Session-2---Python">Practicing Session 2 - Python<a class="anchor-link" href="#Practicing-Session-2---Python">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11783,32 +11783,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Course:-Computational-Thinking-for-Governance-Analytics">Course: Computational Thinking for Governance Analytics<a class="anchor-link" href="#Course:-Computational-Thinking-for-Governance-Analytics">&#182;</a></h2><h3 id="Prof.-Jos&#233;-Manuel-Magallanes,-PhD">Prof. Jos&#233; Manuel Magallanes, PhD<a class="anchor-link" href="#Prof.-Jos&#233;-Manuel-Magallanes,-PhD">&#182;</a></h3><hr>
-<h1 id="Session-3:--Data-Exploration-for-Governance-Analytics-in-Python">Session 3:  Data Exploration for Governance Analytics in Python<a class="anchor-link" href="#Session-3:--Data-Exploration-for-Governance-Analytics-in-Python">&#182;</a></h1><h2 id="Part-A:-Univariate-case">Part A: Univariate case<a class="anchor-link" href="#Part-A:-Univariate-case">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>EDA is the most important stage to confirm or modify your research. It you are familiar with theories that suggests certain explanations to social outcomes, but you have never looked through the data associated with the phenomenon(a) of interest, you may get interesting surprises.</p>
-<p>Let's work at the individual variable level, keeping in mind that your data has many variables (columns) which you do not to explore if they are not currently considered in your research questions; it is also the case that you may not need all the cases (rows).</p>
-<p>EDA is done to closely know the behavior of the data; however, the possibility to detect that behavior depends on the nature of the data at hand. Also, keep in mind that while exploring your data, some data cleaning and formatting may need to be done, as well as some sub setting and slicing of your original data set. Real data sets do not come ready to be analyzed by the powerful functions that Python has.</p>
-<p>Let's visit this <a href="http://nces.ed.gov/datatools/">website</a> and get all the data available for public schools in Washington (when prompted I named the file 'wapubs.xlsx').</p>
-
+<h2 id="1.Use-this-information-to-create-a-data-frame:">1.Use this information to <strong>create</strong> a data frame:<a class="anchor-link" href="#1.Use-this-information-to-create-a-data-frame:">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># may also need xlrd for Excel</span>
-<span class="n">dataFile</span><span class="o">=</span><span class="s1">&#39;https://github.com/EvansDataScience/data/raw/master/wapubs.xlsx&#39;</span>
-<span class="c1"># we will jump 11 rows</span>
-<span class="n">schoolPub</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">dataFile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span> <span class="c1"># pandas calls directly (not like R)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">namesList</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Qing&quot;</span><span class="p">,</span> <span class="s2">&quot;Françoise&quot;</span><span class="p">,</span> <span class="s2">&quot;Raúl&quot;</span><span class="p">,</span> <span class="s2">&quot;Bjork&quot;</span><span class="p">,</span><span class="s2">&quot;Jim&quot;</span><span class="p">,</span> <span class="s2">&quot;Peter&quot;</span><span class="p">,</span><span class="s2">&quot;Maria&quot;</span><span class="p">,</span><span class="s2">&quot;Rosita&quot;</span><span class="p">]</span>
+<span class="n">agesList</span><span class="o">=</span><span class="p">[</span><span class="mi">32</span><span class="p">,</span><span class="o">-</span><span class="mi">33</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">190</span><span class="p">]</span>
+<span class="n">countryList</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;China&quot;</span><span class="p">,</span> <span class="s2">&quot;Senegal&quot;</span><span class="p">,</span> <span class="s2">&quot;Spain&quot;</span><span class="p">,</span> <span class="s2">&quot;Norway&quot;</span><span class="p">,</span> <span class="s2">&quot;Peru&quot;</span><span class="p">,</span> <span class="s2">&quot;Chile&quot;</span><span class="p">,</span><span class="s2">&quot;Venezuela&quot;</span><span class="p">,</span><span class="s2">&quot;Singapur&quot;</span><span class="p">]</span>
+<span class="n">educationList</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Bach&quot;</span><span class="p">,</span> <span class="s2">&quot;Bach&quot;</span><span class="p">,</span> <span class="s2">&quot;Bach&quot;</span><span class="p">,</span> <span class="s2">&quot;PhD&quot;</span><span class="p">,</span><span class="s2">&quot;Master&quot;</span><span class="p">,</span><span class="s2">&quot;Master&quot;</span><span class="p">,</span><span class="s2">&quot;PhD&quot;</span><span class="p">,</span><span class="s2">&quot;Bach&quot;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -11820,17 +11807,17 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>These data have these columns:</p>
+<p>Step 1: Organizing lists into a dictionary:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="o">.</span><span class="n">dtypes</span> <span class="c1"># pandas was smart to recognize the type of data in most columns</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataInDict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;names&#39;</span><span class="p">:</span><span class="n">namesList</span><span class="p">,</span> <span class="s1">&#39;ages&#39;</span><span class="p">:</span><span class="n">agesList</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span><span class="n">countryList</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">:</span><span class="n">educationList</span><span class="p">}</span>
 </pre></div>
 
 </div>
@@ -11842,55 +11829,173 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a id='head'></a>
-If you are not familiar with the variable names, you can find this <a href="http://nces.ed.gov/ccd/commonfiles/glossary.asp">glossary</a> useful.</p>
-<p>Unless you are familiar with a particular file, you will find different challenges to explore the data. A good data exploration depends on properly identifying the nature of each variable:</p>
-<ul>
-<li>Categorical<ul>
-<li><a href="#Dichotomous">Dichotomous</a></li>
-<li>Polytomous<ul>
-<li><a href="#Nordinal">Non-Ordinal</a></li>
-<li><a href="#Ordinal">Ordinal</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Numerical<ul>
-<li><a href="#Counts">Counts</a></li>
-<li><a href="#Measurements">Measurements</a> (ratio or interval scale)</li>
-</ul>
-</li>
-</ul>
-<p>I will also pay attention to the concept of <a href="#outliers">outliers</a>, at the end of this part.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<p><a id='Dichotomous'></a></p>
-<h2 id="-Exploring-Dichotomous-data"><span style="color:blue"> Exploring Dichotomous data</span><a class="anchor-link" href="#-Exploring-Dichotomous-data">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's turn our attention to  schools whose percentage of low-income students is at least 40 percent. This is the distribution of its values:</p>
+<p>Step 2: Turn a dictionary into a dataframe (excel-like table). Data frame is not natively in Python. Python uses <strong>pandas</strong> to create one:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># we need function: DataFrame.from_dict</span>
+<span class="n">tableStudents</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">dataInDict</span><span class="p">)</span>
+<span class="c1"># seeing it:</span>
+<span class="n">tableStudents</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ages</th>
+      <th>country</th>
+      <th>education</th>
+      <th>names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>32</td>
+      <td>China</td>
+      <td>Bach</td>
+      <td>Qing</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-33</td>
+      <td>Senegal</td>
+      <td>Bach</td>
+      <td>Françoise</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>28</td>
+      <td>Spain</td>
+      <td>Bach</td>
+      <td>Raúl</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>30</td>
+      <td>Norway</td>
+      <td>PhD</td>
+      <td>Bjork</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>21</td>
+      <td>Peru</td>
+      <td>Master</td>
+      <td>Jim</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>Chile</td>
+      <td>Master</td>
+      <td>Peter</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>21</td>
+      <td>Venezuela</td>
+      <td>PhD</td>
+      <td>Maria</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>190</td>
+      <td>Singapur</td>
+      <td>Bach</td>
+      <td>Rosita</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.Once-you-have-the-data-frame-answer-these-questions:">2.Once you have the data frame answer these questions:<a class="anchor-link" href="#2.Once-you-have-the-data-frame-answer-these-questions:">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>a. Write <strong>algorithm</strong> to find wrong ages in the data frame.</p>
+<p>b. Use simple lines of code to transform your algorithm.</p>
+<p>c. Make a function <strong>badAgeDetector()</strong> that receives a dataframe and <em>returns the names</em> of the guys with wrong ages.</p>
+<p>d. Change <strong>badAgeDetector2()</strong> so that it receives a dataframe and <em>returns a dataframe with</em> the names of the guys with wrong ages.</p>
+<p>e. Change <strong>badAgeDetector3()</strong> so that it receives a dataframe and <em>returns a dataframe with</em>  the names and ages of the guys with wrong ages.</p>
+<p>f. Change <strong>badAgeDetector4()</strong> so that it receives a dataframe and <em>returns a dataframe with</em> all the info from every guy with wrong ages.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="a.-Writing-algorithm:">a. Writing algorithm:<a class="anchor-link" href="#a.-Writing-algorithm:">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read all the data</span>
+<span class="c1"># From the data get the ages</span>
+<span class="c1"># Save the ages in an object</span>
+<span class="c1"># Assume a lower and upper threshold</span>
+<span class="c1"># Read each age</span>
+<span class="c1"># Check if that age is above or below some thresholds</span>
+  <span class="c1"># Show whether the age is good or not.</span>
 </pre></div>
 
 </div>
@@ -11902,91 +12007,17 @@ If you are not familiar with the variable names, you can find this <a href="http
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>If you prefer to see relative frequencies:</p>
-
+<h3 id="b.-Transforming-your-algorithm-into-Python.">b. Transforming your algorithm into Python.<a class="anchor-link" href="#b.-Transforming-your-algorithm-into-Python.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>From these results, you have no doubts that there are much more schools of this kind than of the other.</p>
-<p>Sometimes, it is useful (not in this case) to run a $\chi^2$ test to see if the differences are significant:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">chisquare</span>
-
-<span class="n">distribution</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">chisquare</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The result above is telling you that the probability that this distribution behaves like a uniform distribution is very low; so a safe decision is to assume that the differences in the frequencies are significant.</p>
-<p>The above result included the <em>not applicable</em> symbol. We can get rid of it and re test:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the symbol † as missing value:</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1">#numpy manages the nan for pandas</span>
-<span class="n">symbolsForNA</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;†&#39;</span><span class="p">]</span>
-<span class="n">schoolPub</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">symbolsForNA</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># in the whole data frame!!</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We should get a clean frequency table:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Read all the data</span>
+<span class="n">theData</span><span class="o">=</span><span class="n">tableStudents</span>
 </pre></div>
 
 </div>
@@ -11996,389 +12027,12 @@ If you are not familiar with the variable names, you can find this <a href="http
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># re testing:</span>
-<span class="n">distribution</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">chisquare</span><span class="p">(</span><span class="n">distribution</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The equal distribution of frequencies is rejected again.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Central-measurement-and-dispersion">Central measurement and dispersion<a class="anchor-link" href="#Central-measurement-and-dispersion">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <strong>mode</strong> is the measure of centrality for dichotomous values. You can detect it just by watching the frequency, but let's see it using <em>Pandas</em>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Title 1 School Wide*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#head">Go to begining</a></p>
-<hr>
-<p><a id='Nordinal'></a></p>
-<h2 id="-EDA-for-non-ordinal-polytomous-variables"><span style="color:blue"> EDA for non-ordinal polytomous variables</span><a class="anchor-link" href="#-EDA-for-non-ordinal-polytomous-variables">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's pay attention to the school location:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have a weird category "N". Before making any decision, let's try to find out what is going on in that row:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;N&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>You see many <em>not applicable</em> symbols in the school categories. As it is not clear why this school is here, we can just recode that cell as missing:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1193</span><span class="p">,</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's check its data type:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We detect inmediately that we have an <em>object</em> instead of a <em>category</em>, let's solve that too:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The function <em>describe</em> can be applied to categories, but you get not much:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>  <span class="c1"># &#39;top&#39; is the mode</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Central-Value">Central Value<a class="anchor-link" href="#Central-Value">&#182;</a></h3><p>The central value of polytomous variables (and dichotomous) is the mode:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># the well known mode:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We knew that from the previous frequency table and from <em>describe</em>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Dispersion">Dispersion<a class="anchor-link" href="#Dispersion">&#182;</a></h3><p>The measure of dispersion is used to inform if the central value is representative. One way to quantify this concept in polytomous variables is via the Gini Index here, which is present in the versatile package <em>pysal</em>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pysal.inequality.gini</span> <span class="k">import</span> <span class="n">Gini</span>
-<span class="n">Gini</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">g</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The closer the index gets to zero would mean the mode loses salience, the closer to 1, the more salient it is. The Gini is not the best way to measure inequality, but worth using it for comparative purposes<sup><a href="#fn1" id="ref1">1</a></sup>.</p>
-<p>The above result confirms that there is not one value that has the greater share. But we do not have an equal distribution, do we?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">chisquare</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>From the results above, the most probable is that this variable does not follow a uniform distribution.</p>
-<p>Let's see a simple plot:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># this is needed!</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline  
-
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-
-<span class="c1"># we are plotting the frequency table</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What about highlighting the mode:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">categories</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span> <span class="c1"># all the categories</span>
-<span class="n">modes</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">())</span> <span class="c1"># list of &#39;modes&#39; (from the categories)</span>
-
-<span class="n">newPalette</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;r&#39;</span> <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;y&#39;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">categories</span><span class="p">]</span> <span class="c1">#list of colors</span>
-
-<span class="c1"># changing palette:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">newPalette</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The dispersion is clear so far, this plot could help highlighting the subpopulations:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># needed for more customization</span>
-
-<span class="n">newerPalette</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;grey&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;orange&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;turquoise&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span> <span class="o">+</span> <span class="p">[</span><span class="s1">&#39;lightblue&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;Locale*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">newerPalette</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;The Title&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;COUNT&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;CATEGORIES&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#head">Go to begining</a></p>
-<hr>
-<p><a id='Ordinal'></a></p>
-<h2 id="-EDA-for-ordinal-categorical-variables"><span style="color:blue"> EDA for ordinal categorical variables</span><a class="anchor-link" href="#-EDA-for-ordinal-categorical-variables">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's consider for this section the variable that tells us the highest grade offered in a school. A simple exploration gives:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># any weird symbols in the categories:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># From the data get the ages</span>
+<span class="c1"># Save the ages in an object</span>
+<span class="n">guyAges</span><span class="o">=</span><span class="n">theData</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span>
 </pre></div>
 
 </div>
@@ -12388,107 +12042,12 @@ If you are not familiar with the variable names, you can find this <a href="http
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># if this is not categorical, we will change soon:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dtype</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>'O'</em> type is not a category. As there is no need to replace weird symbols, we'll just go ahead and set it as ordinal:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we set it up as both category and ordinal:</span>
-<span class="kn">from</span> <span class="nn">pandas.api.types</span> <span class="k">import</span> <span class="n">CategoricalDtype</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">CategoricalDtype</span><span class="p">(</span><span class="n">ordered</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's find out the ordered assigned:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>index</em> showed the current order. That should be changed, because <em>PK</em> and <em>KG</em> are first:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">levels</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">)</span> <span class="c1"># turn index into a list</span>
-<span class="c1"># last two elements: levels[-2:]</span>
-<span class="c1"># reverse those last two: reversed(levels[-2:])</span>
-<span class="c1"># turn it into a list: list(reversed(levels[-2:]))</span>
-<span class="c1"># append the rest: + levels[0:-2]</span>
-<span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">levels</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]))</span><span class="o">+</span> <span class="n">levels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>With that information, I can re set the categories:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">newCategories</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">levels</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]))</span><span class="o">+</span> <span class="n">levels</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">reorder_categories</span><span class="p">(</span><span class="n">newCategories</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Assume a lower and upper threshold</span>
+<span class="n">lowT</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">upT</span><span class="o">=</span><span class="mi">80</span>
 </pre></div>
 
 </div>
@@ -12498,1551 +12057,181 @@ If you are not familiar with the variable names, you can find this <a href="http
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># confirming:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The describe function does not offer much:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Central-Value">Central Value<a class="anchor-link" href="#Central-Value">&#182;</a></h3>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># as always the mode:</span>
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>An important central value in ordered categories is the <strong>median</strong>. We need to transform the counts to percent, acummulate the sum of percents, and find the value where the cummulative sum reaches 50%.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>After identifying the median visually, I can use this code to find the median:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">relFrequencies</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-<span class="n">cumulativeTable</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">relFrequencies</span><span class="p">)</span>
-<span class="n">pos</span> <span class="o">=</span><span class="mi">0</span>
-<span class="k">for</span> <span class="n">percent</span> <span class="ow">in</span> <span class="n">cumulativeTable</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">percent</span> <span class="o">&lt;</span> <span class="mf">0.5</span><span class="p">:</span> 
-        <span class="n">pos</span> <span class="o">+=</span><span class="mi">1</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">guyAges</span><span class="p">:</span>                   <span class="c1"># Read each age</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;=</span> <span class="n">lowT</span> <span class="ow">and</span> <span class="n">value</span><span class="o">&lt;=</span><span class="n">upT</span><span class="p">:</span>    <span class="c1"># Check if that age is above or below some thresholds</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;reading a good value&#39;</span> <span class="p">)</span> <span class="c1"># Show whether the age is good or not.</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">break</span>
-<span class="n">cumulativeTable</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span> <span class="c1"># &#39;index&#39; tells you position not value</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;here is a bad one:&#39;</span><span class="p">,</span><span class="n">value</span> <span class="p">)</span> <span class="c1"># Show whether the age is good or not.</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It means that 50% of the schools offer at most 8th grade.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dispersion">Dispersion<a class="anchor-link" href="#Dispersion">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What value of Gini do you expect?</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Gini</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span><span class="o">.</span><span class="n">g</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Gini tells that there is some concentration. The plot should help us get a better idea:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;The Title&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;COUNT&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;CATEGORIES&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There was one mode, but a few other competing categories with high counts, these 4 categories concentrated much more than the 11 remaining combined.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Skewness">Skewness<a class="anchor-link" href="#Skewness">&#182;</a></h2><p>We can not compute a proper measure of symmetry as there is no distance among the categories, but we know there is lack of symmetry because the two central values are different. As the mode is to the right of the median, we could expect a longer left tail. Let's prepare the plot:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># no missing values: schoolPub[&#39;High Grade*&#39;].dropna()</span>
-<span class="c1"># valid values into numeric: schoolPub[&#39;High Grade*&#39;].dropna().cat.codes</span>
-
-<span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;The Title&quot;</span><span class="p">,</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The shape is OK, but the labels are wrong, because we turned them into numbers, this is how we change it:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">labelsCat</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">)</span> <span class="c1"># name of categories</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ax</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;The Title&quot;</span><span class="p">,</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span> <span class="c1"># values in axis</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labelsCat</span><span class="p">)</span>  <span class="c1"># labels for the axis</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> <span class="c1"># if you omit this you get the plot and also extra info</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python also has the library <em>seaborn</em>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-
-<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">schoolPub</span><span class="p">[</span><span class="s1">&#39;High Grade*&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">codes</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xticks</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span> <span class="c1"># values in axis</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labelsCat</span><span class="p">)</span>  <span class="c1"># labels for the axis</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#head">Go to begining</a></p>
-<hr>
-<p><a id='Counts'></a></p>
-<h2 id="-EDA-for-Counts"><span style="color:blue"> EDA for Counts</span><a class="anchor-link" href="#-EDA-for-Counts">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Cross sectional counts</strong></p>
-<p>I have a file about Supplemental Nutrition Assistance Program (SNAP) beneficiaries data by counties, in a cross sectional fashion, let me use it here:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">dataFile</span><span class="o">=</span><span class="s2">&quot;https://github.com/EvansDataScience/data/raw/master/cntysnap.xls&quot;</span>
-<span class="n">snapBen</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">dataFile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBen</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As usual:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBen</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If a county has a FIPS code equal to 0, then that row is informing about the State. Keeping the counties only:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">=</span><span class="n">snapBen</span><span class="p">[</span><span class="n">snapBen</span><span class="p">[</span><span class="s1">&#39;County FIPS code&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Centrality">Centrality<a class="anchor-link" href="#Centrality">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In this case, describe() does give more information, we can get mean and median, and the quartiles:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Skewness">Skewness<a class="anchor-link" href="#Skewness">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In numeric data it is easier to detect skewness, we want to know if the bulk of the data is biasing towards a particular direction. In evene easier terms, we want to know if the difference between mean and median is positive or negative, if it is positive, the bulk of the data is moving towards the left (or the tail is longer to the rigth).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 2013&#39;</span><span class="p">:</span><span class="s1">&#39;July 1989&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">-</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 2013&#39;</span><span class="p">:</span><span class="s1">&#39;July 1989&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a particular skewness measure:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 2013&#39;</span><span class="p">:</span><span class="s1">&#39;July 1989&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>All are positive, which means that every year the right tail is salient: there are some counties, not the majority, that have much more beneficiaries than the rest.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Kurtosis">Kurtosis<a class="anchor-link" href="#Kurtosis">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>To complete the picture of what is going on with this variable, we should know if the values around the mode are salient or not. The more salient they are the distribution is called leptokurtic; the less salient, platycurtic (or mesokurtic if it behaves as a normal distribution). Let’s do it:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 2013&#39;</span><span class="p">:</span><span class="s1">&#39;July 1989&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It seems every column is distributed similarly every year. Let's prepare data for plot:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#current order of columns as  alist:</span>
-<span class="n">currentOrder</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="c1">#re arranging order:</span>
-<span class="n">newOrder</span><span class="o">=</span><span class="n">currentOrder</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="nb">list</span><span class="p">(</span><span class="nb">reversed</span><span class="p">(</span><span class="n">currentOrder</span><span class="p">[</span><span class="mi">3</span><span class="p">::]))</span>
-<span class="c1"># years ascending</span>
-<span class="n">snapBenCounties</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="n">newOrder</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 1989&#39;</span><span class="p">:</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;sk&quot;</span><span class="p">)</span>
-<span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 1989&#39;</span><span class="p">:</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;kt&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 1989&#39;</span><span class="p">:</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Both are very similar, and extremely large by the second half of the 1990s.</p>
-<p>It would a good idea to plot the original data (not the coefficients) per year:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 1989&#39;</span><span class="p">:</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">xrot</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What about a box plot:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">DATA</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="s1">&#39;July 1989&#39;</span><span class="p">:</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">rot</span> <span class="o">=</span><span class="mi">90</span><span class="p">,</span> <span class="n">sym</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What about highlighting WA state in a particular year:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># data</span>
-<span class="n">DATA</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span><span class="nb">list</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">columns</span><span class="p">,(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)))]</span> <span class="c1"># without column 2 and 3</span>
-
-<span class="c1"># palette:</span>
-<span class="n">pal</span> <span class="o">=</span> <span class="p">{</span><span class="n">state</span><span class="p">:</span> <span class="s2">&quot;r&quot;</span> <span class="k">if</span> <span class="n">state</span> <span class="o">==</span> <span class="mi">53</span> <span class="k">else</span> <span class="s2">&quot;y&quot;</span> <span class="k">for</span> <span class="n">state</span> <span class="ow">in</span> <span class="n">DATA</span><span class="p">[</span><span class="s1">&#39;State FIPS code&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()}</span>
-<span class="c1"># plotting:</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;State FIPS code&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;July 2013&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">DATA</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="n">pal</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="#head">Go to begining</a></p>
-<hr>
-<p><a id='Measurements'></a></p>
-<h2 id="-EDA-for-measurements"><span style="color:blue"> EDA for measurements</span><a class="anchor-link" href="#-EDA-for-measurements">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let use a data set on 2015 Poverty and Median Household Income Estimates per county in the USA.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">dataFile</span><span class="o">=</span><span class="s2">&quot;https://github.com/EvansDataScience/data/raw/master/est15ALL.xls&quot;</span>
-<span class="n">columnsWanted</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span><span class="o">+</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span>
-<span class="n">income</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">dataFile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="n">columnsWanted</span><span class="p">)</span> <span class="c1"># COLUMNS TO RECOVER</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The <em>County FIPS Code</em> is useful to keep just the counties:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#subsetting</span>
-<span class="n">incomeCounties</span><span class="o">=</span><span class="n">income</span><span class="p">[</span><span class="n">income</span><span class="p">[</span><span class="s1">&#39;County FIPS Code&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="c1">#seeing:</span>
-<span class="n">incomeCounties</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Checking type:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Income is an object, let's see if we can change each valu to numeric:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]:</span>
-    <span class="k">try</span><span class="p">:</span>
-        <span class="nb">float</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>There is a '.' in the cells representing missing values. I could reopen the file, telling python that:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="n">dataFile</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="n">columnsWanted</span><span class="p">,</span><span class="n">na_values</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="o">=</span><span class="n">income</span><span class="p">[</span><span class="n">income</span><span class="p">[</span><span class="s1">&#39;County FIPS Code&#39;</span><span class="p">]</span><span class="o">!=</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Centrality">Centrality<a class="anchor-link" href="#Centrality">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can get centrality measures using <em>describe</em>:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Dispersion">Dispersion<a class="anchor-link" href="#Dispersion">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can get the standard deviation and the coefficient of variation:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span><span class="o">/</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Skewness">Skewness<a class="anchor-link" href="#Skewness">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">skew</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Kurtosis">Kurtosis<a class="anchor-link" href="#Kurtosis">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">kurt</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can now pay more attention to the histogram, and how to show some info on it, like its normal curve:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span><span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span> <span class="c1"># w/o missing values</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="s1">&#39;data fit to normal&#39;</span><span class="p">,</span><span class="s1">&#39;data as it is&#39;</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;How is the income distributed in the USA?&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The histogram with central measures…</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#statistics:</span>
-<span class="n">mnVar</span><span class="o">=</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">mdVar</span><span class="o">=</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
-
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">(),</span><span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">fit</span><span class="o">=</span><span class="n">norm</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;The closer the mean to the median, the more inequality?&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mnVar</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">mdVar</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;median&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's focus in a couple of States:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">incWaCounties</span><span class="o">=</span><span class="n">incomeCounties</span><span class="p">[</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Postal Code&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;WA&#39;</span><span class="p">]</span>
-<span class="n">incCaCounties</span><span class="o">=</span><span class="n">incomeCounties</span><span class="p">[</span><span class="n">incomeCounties</span><span class="p">[</span><span class="s1">&#39;Postal Code&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;CA&#39;</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Plotting CA</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">incCaCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;CA&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">incCaCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean CA&#39;</span><span class="p">)</span>
-
-<span class="c1"># Plotting WA</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">incWaCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;lightgreen&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;WA&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">incWaCounties</span><span class="p">[</span><span class="s1">&#39;Median Household Income&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkgreen&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;mean WA&#39;</span><span class="p">)</span>
-
-<span class="c1"># for both plots:</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span><span class="n">ncol</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Is CA income better than WA?&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<p><a id='part1'></a></p>
-<h2 id="Outliers-in-data-exploration">Outliers in data exploration<a class="anchor-link" href="#Outliers-in-data-exploration">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Real data comes most of the time with outliers. These are not bad things, it is just the identification that a value seems to be 'different' than the rest. So, the problem to find outliers is also the problem to define what makes a majority of 'similar' values. This is crucial point in governance analytics, as the 'common good' becomes a very subjective concept in computational terms.</p>
-<p>For this topic, we will use the data if SNAP previously explored (particularly the subset at county level).</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's pay attention to the  year 2013 and get some descriptives first:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> <span class="c1"># snapBenCounties[[&#39;July 2013&#39;]].info() technical info...</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's pay attention to the quartile (25th and 75th percentile). These are elements in boxplots, and their difference, the intequartile range (IQR) is used to identify outliers numerically and visually:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot</span><span class="p">,</span><span class="n">dataBP</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">box</span><span class="p">(</span><span class="n">vert</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">return_type</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The command above not only plotted the boxplot, but when I added the parameter <em>return_type</em> I saved several  <em>values</em> used by python to build the boxplot. For instance, the box limits are:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dataBP</span><span class="p">[</span><span class="s2">&quot;boxes&quot;</span><span class="p">]]</span> <span class="c1"># limits of the boxes</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Above, we confirmed the boxplot boxes are limited by the 25th and 75th percentile (they are the same as the one we got using <em>describe()</em>, right?).
-You can get more information from the variable <em>dataBP</em>; besides information about the 'boxes', you also have 'whiskers', 'medians', 'caps', and 'fliers'. Let me use 'caps':</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># box plot lines for min and max values, NOT considered outliers</span>
-<span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dataBP</span><span class="p">[</span><span class="s2">&quot;caps&quot;</span><span class="p">]]</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As you see, the lowest cap of the boxplot is the same as the one found using <em>describe()</em>, but NOT the maximum. The command <em>describe()</em> informs that the max value of the variable is...</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>... while the highest values cap is 24030; then all the values greater than this one will be considered outliers.</p>
-<p>You know how this happened, right?..if not, let me refresh the process:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The &#39;caps&#39; are computed usng the interquartile range (IQR).</span>
-<span class="c1"># The IQR is the distance between the first and third quartile;</span>
-<span class="c1"># or, in other terms, the distance between the 75th and 25th percentiles:</span>
-
-<span class="c1"># 1. Computing 75th and 25th percentiles:</span>
-<span class="n">q25</span><span class="p">,</span><span class="n">q75</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span><span class="mf">0.75</span><span class="p">])</span>
-
-<span class="c1"># 2. Computing the distance between them or IQR:</span>
-<span class="n">IQR</span><span class="o">=</span><span class="n">q75</span><span class="o">-</span><span class="n">q25</span>
-
-<span class="c1"># which is:</span>
-<span class="n">IQR</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, once the IQR is computed, it is multiplied by 1.5; the result is added / subtracted to the 75th/25th percentile:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capHigh</span> <span class="o">=</span> <span class="n">q75</span> <span class="o">+</span> <span class="n">IQR</span><span class="o">*</span><span class="mf">1.5</span>
-<span class="n">capHigh</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capLow</span><span class="o">=</span><span class="n">q25</span> <span class="o">-</span> <span class="n">IQR</span><span class="o">*</span><span class="mf">1.5</span>
-<span class="n">capLow</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Any value above capHigh or below capLow will be considered a possible outlier.</p>
-<p>According to this process, we do not have outliers in the lowest values, but several in the upper ones. If it is so, the amount of outlying values is:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="n">flier</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span> <span class="k">for</span> <span class="n">flier</span> <span class="ow">in</span> <span class="n">dataBP</span><span class="p">[</span><span class="s2">&quot;fliers&quot;</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span>
-<span class="c1"># you can see them using:</span>
-<span class="c1"># [flier.get_xdata() for flier in dataBP[&quot;fliers&quot;]][0]</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>What is this approach to find outliers?</p>
-<p>The idea is to see what values are far from the 'mass' (between the 25th and 75th percentiles) but for that, there is an assumption that the mass is around an 'average' value (the median), and that the outliers are symmetrically distant from that average. In this case that distance is the IQR multiplied by some constant. You can increase the constant to find extreme outliers.</p>
-<p>Instead of using the median, we could try the mean; but then we need to adapt the approach so that instead of using IQR, we use the standard deviation instead:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">StdDev</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
-<span class="n">Mean</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Then</span>
-<span class="n">lowCapT</span><span class="o">=</span><span class="n">Mean</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">StdDev</span>
-<span class="n">lowCapT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># and </span>
-<span class="n">upCapT</span><span class="o">=</span><span class="n">Mean</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">StdDev</span>
-<span class="n">upCapT</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This interval will give us less outliers, and again, all of them are in the right tail. The amount of outliers here will be:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">][</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="n">upCapT</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We could represent this new 'cap' in the boxplot, but since the boxplot requires percentiles for the whiskers we need to find what peecentile the value <em>upCapT</em> represents; we can do this:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="k">import</span> <span class="n">stats</span>
-<span class="n">new_capHigh</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">percentileofscore</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">],</span> <span class="n">upCapT</span><span class="p">)</span>
-<span class="c1"># see:</span>
-<span class="n">new_capHigh</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have a clearer idea of what the percentile is, so we give that to the plot:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">limits</span><span class="o">=</span><span class="p">[</span><span class="mi">100</span><span class="o">-</span><span class="n">new_capHigh</span><span class="p">,</span><span class="n">new_capHigh</span><span class="p">]</span>
-<span class="n">arguments</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="s2">&quot;vert&quot;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s1">&#39;return_type&#39;</span><span class="p">:</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="s1">&#39;whis&#39;</span><span class="p">:</span><span class="n">limits</span><span class="p">,</span><span class="s1">&#39;sym&#39;</span><span class="p">:</span><span class="s1">&#39;*&#39;</span><span class="p">}</span>
-<span class="n">plot</span><span class="p">,</span><span class="n">dataBP</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Are we satisfied? This is the original data:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># notice the amount of bins:</span>
-<span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>And this is the data without the boxplot outliers:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">][</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">&lt;</span><span class="n">q75</span><span class="o">+</span><span class="mf">1.5</span><span class="o">*</span><span class="n">IQR</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We have a very asymmetric distribution; so we should be careful. If this were a real long-tail distribution, using our previous techniques may fail detecting outliers, specially in the lower tail. Let me see how it looks when I transform the values into logarithmic ones:</p>
+<div class="output_area">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="prompt"></div>
 
-<span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;hist&#39;</span><span class="p">)</span>
-</pre></div>
 
-</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>reading a good value
+here is a bad one: -33
+reading a good value
+reading a good value
+reading a good value
+here is a bad one: 3
+reading a good value
+here is a bad one: 190
+</pre>
 </div>
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Is the log version far from a normal distribution? Let's compare with the normal distribution visually:</p>
 
-</div>
 </div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="k">import</span> <span class="n">norm</span>
-
-<span class="c1"># need data without missing values</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()),</span> <span class="n">fit</span><span class="o">=</span><span class="n">norm</span><span class="p">,</span> <span class="n">kde</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##ANOTHER STRATEGY</span>
+
+<span class="n">goodAges</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">lowT</span><span class="p">,</span><span class="n">upT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">guyAges</span><span class="p">:</span>                     <span class="c1"># Read each age</span>
+    <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">goodAges</span><span class="p">:</span>                 <span class="c1"># Check if that age is above or below some thresholds</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;reading a good value&#39;</span> <span class="p">)</span>   <span class="c1"># Show whether the age is good or not.</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;here is a bad one:&#39;</span><span class="p">,</span><span class="n">value</span> <span class="p">)</span> <span class="c1"># Show whether the age is good or not.</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's see the "new" outliers:</p>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arguments</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;kind&#39;</span><span class="p">:</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="s1">&#39;vert&#39;</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s1">&#39;return_type&#39;</span><span class="p">:</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="s1">&#39;sym&#39;</span><span class="p">:</span><span class="s1">&#39;*&#39;</span><span class="p">}</span>
-<span class="n">plot</span><span class="p">,</span><span class="n">dataBPlog</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">**</span><span class="n">arguments</span><span class="p">)</span>
-</pre></div>
 
-</div>
-</div>
-</div>
+<div class="output_area">
+
+<div class="prompt"></div>
 
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>reading a good value
+here is a bad one: -33
+reading a good value
+reading a good value
+reading a good value
+here is a bad one: 3
+reading a good value
+here is a bad one: 190
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This is the amount of outliers detected, this time in both sides:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">([</span><span class="n">value</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dataBPlog</span><span class="p">[</span><span class="s2">&quot;fliers&quot;</span><span class="p">]][</span><span class="mi">0</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">##EVEN ANOTHER STRATEGY</span>
+
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">guyAges</span><span class="p">:</span>                       <span class="c1"># Read each age</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="ow">in</span> <span class="n">goodAges</span><span class="p">):</span>                 <span class="c1"># Check if that age is above or below some thresholds</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;reading a good value&#39;</span> <span class="p">)</span>     <span class="c1"># Show whether the age is good or not</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;here is a bad one:&#39;</span><span class="p">)</span> 
+        <span class="nb">print</span> <span class="p">(</span><span class="n">theData</span><span class="p">[</span><span class="n">theData</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">value</span><span class="p">])</span>  <span class="c1"># print the rows of the data frame with wrong values</span>
 </pre></div>
 
 </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
 
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>reading a good value
+here is a bad one:
+   ages  country education      names
+1   -33  Senegal      Bach  Françoise
+reading a good value
+reading a good value
+reading a good value
+here is a bad one:
+   ages country education  names
+5     3   Chile    Master  Peter
+reading a good value
+here is a bad one:
+   ages   country education   names
+7   190  Singapur      Bach  Rosita
+</pre>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Let me recover the <em>caps</em>:</p>
 
 </div>
 </div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">caps</span><span class="o">=</span><span class="p">[</span><span class="n">value</span><span class="o">.</span><span class="n">get_xdata</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dataBPlog</span><span class="p">[</span><span class="s2">&quot;caps&quot;</span><span class="p">]]</span> <span class="c1">#notice trick: &quot;[0]&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## LAST STRATEGY (not exactly the answer)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;here is the bad ones:&#39;</span><span class="p">)</span>            <span class="c1"># Read each age</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">guyAges</span><span class="p">:</span>                      <span class="c1"># Check if that age is above or below some thresholds</span>
+    <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">goodAges</span><span class="p">):</span>        
+        <span class="nb">print</span> <span class="p">(</span><span class="n">tableStudents</span><span class="p">[</span><span class="n">tableStudents</span><span class="p">[</span><span class="s1">&#39;ages&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">value</span><span class="p">])</span>  <span class="c1"># print the rows of the data frame with wrong ages</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Saving each cap:</p>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>here is the bad ones:
+   ages  country education      names
+1   -33  Senegal      Bach  Françoise
+   ages country education  names
+5     3   Chile    Master  Peter
+   ages   country education   names
+7   190  Singapur      Bach  Rosita
+</pre>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">low</span><span class="o">=</span><span class="n">caps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">up</span><span class="o">=</span><span class="n">caps</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
 
-</div>
 </div>
 </div>
 
@@ -14051,18 +12240,29 @@ You can get more information from the variable <em>dataBP</em>; besides informat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can use this to create a new column <em>flagging</em> a cell when a county is an outlier.</p>
-
+<h3 id="c.-Function-badAgeDetector()-that-receives-a-dataframe-and-returns-the-names-of-the-guys-with-wrong-ages">c. Function <em>badAgeDetector()</em> that receives a dataframe and <em>returns the names</em> of the guys with wrong ages<a class="anchor-link" href="#c.-Function-badAgeDetector()-that-receives-a-dataframe-and-returns-the-names-of-the-guys-with-wrong-ages">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a function to recode</span>
-<span class="n">myRecode</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="mi">1</span> <span class="k">if</span> <span class="n">x</span><span class="o">&lt;</span><span class="n">low</span> <span class="k">else</span> <span class="mi">2</span> <span class="k">if</span> <span class="n">x</span><span class="o">&gt;</span><span class="n">up</span>  <span class="k">else</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>  <span class="c1">#control missing</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># The function needs these fields as inputs:</span>
+<span class="c1"># DF is the dataframe</span>
+<span class="c1"># ageColumnName is the name of the column of ages</span>
+<span class="c1"># namesColumName is the name of the column of names</span>
+<span class="c1"># lowT and upT are the thresholds</span>
+
+<span class="k">def</span> <span class="nf">badAgeDetector</span><span class="p">(</span><span class="n">DF</span><span class="p">,</span><span class="n">ageColumnName</span><span class="p">,</span><span class="n">namesColumName</span><span class="p">,</span><span class="n">lowT</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">upT</span><span class="o">=</span><span class="mi">80</span><span class="p">):</span>  <span class="c1"># Read all the data</span>
+    
+    <span class="n">goodAges</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">lowT</span><span class="p">,</span><span class="n">upT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># Assume a lower and upper threshold</span>
+    
+    <span class="c1"># subset the original DF:keep the rows whose ages are NOT good</span>
+    <span class="n">DFdetected</span><span class="o">=</span><span class="n">DF</span><span class="p">[</span><span class="o">~</span><span class="n">DF</span><span class="p">[</span><span class="n">ageColumnName</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">goodAges</span><span class="p">)]</span> <span class="c1"># this style replaces &#39;for&#39; and &#39;if&#39;</span>
+    
+    <span class="k">return</span> <span class="n">DFdetected</span><span class="p">[</span><span class="n">namesColumName</span><span class="p">]</span> <span class="c1"># return the names: you are returning a pandas &quot;series&quot; (like a list)</span>
 </pre></div>
 
 </div>
@@ -14072,323 +12272,230 @@ You can get more information from the variable <em>dataBP</em>; besides informat
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#apply function and create new column</span>
-<span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;out2013&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;July 2013&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">myRecode</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># You use the function filling each field with the appropriate argument:</span>
+
+<span class="n">badAgeDetector</span><span class="p">(</span><span class="n">DF</span><span class="o">=</span><span class="n">theData</span><span class="p">,</span><span class="n">ageColumnName</span><span class="o">=</span><span class="s1">&#39;ages&#39;</span><span class="p">,</span><span class="n">namesColumName</span><span class="o">=</span><span class="s2">&quot;names&quot;</span><span class="p">)</span> <span class="c1"># the thresholds are default values</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#verify snapBenCounties[&#39;out2013&#39;]count: do we hve 115 flags? YES</span>
-<span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;out2013&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="p">[[</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="s1">&#39;out2013&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
+<div class="output_area">
 
-</div>
-</div>
-</div>
+<div class="prompt output_prompt">Out[13]:</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Counties names can repeat, but not States. We have no states in the columns, so we create it from the column <em>Name</em>. Let em show you the steps:</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># using split,a function for strings:</span>
-<span class="s1">&#39;Autauga County, AL&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)</span> <span class="c1"># notice the space after the comma</span>
-<span class="c1"># you get a list:</span>
-</pre></div>
 
-</div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="output_text output_subarea output_execute_result">
+<pre>1    Françoise
+5        Peter
+7       Rosita
+Name: names, dtype: object</pre>
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Using the small example above, we can build a simple function that reads a string and splits it, keeping the second value:</p>
 
-</div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">splitAndGetSecondElement</span><span class="o">=</span><span class="k">lambda</span> <span class="n">valueAsString</span><span class="p">:</span> <span class="n">valueAsString</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
 
 </div>
 </div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We can then apply that function to this one column of names? Let me see if this works:</p>
-
+<h3 id="d.-Function-badAgeDetector2()-that-receives-a-dataframe-and-returns-a-dataframe-with-the-names-of-the-guys-with-wrong-ages.">d. Function <em>badAgeDetector2()</em> that receives a dataframe and <em>returns a dataframe with</em> the names of the guys with wrong ages.<a class="anchor-link" href="#d.-Function-badAgeDetector2()-that-receives-a-dataframe-and-returns-a-dataframe-with-the-names-of-the-guys-with-wrong-ages.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">splitAndGetSecondElement</span><span class="p">)</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># only change is the way we send the output:</span>
+
+<span class="k">def</span> <span class="nf">badAgeDetector2</span><span class="p">(</span><span class="n">DF</span><span class="p">,</span><span class="n">ageColumnName</span><span class="p">,</span><span class="n">namesColumName</span><span class="p">,</span><span class="n">lowT</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">upT</span><span class="o">=</span><span class="mi">80</span><span class="p">):</span>
+    <span class="n">goodAges</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">lowT</span><span class="p">,</span><span class="n">upT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">DFdetected</span><span class="o">=</span><span class="n">DF</span><span class="p">[</span><span class="o">~</span><span class="n">DF</span><span class="p">[</span><span class="n">ageColumnName</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">goodAges</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">DFdetected</span><span class="p">[[</span><span class="n">namesColumName</span><span class="p">]]</span> <span class="c1"># The extra [] create a dataframe</span>
 </pre></div>
 
-</div>
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It works as expected, then I can create a new column:</p>
 
-</div>
 </div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># save result:</span>
-<span class="n">states</span><span class="o">=</span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">Name</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">splitAndGetSecondElement</span><span class="p">)</span> 
-
-<span class="c1">#make a new column with the names:</span>
-<span class="n">snapBenCounties</span> <span class="o">=</span> <span class="n">snapBenCounties</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">StateName</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">states</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">badAgeDetector2</span><span class="p">(</span><span class="n">DF</span><span class="o">=</span><span class="n">theData</span><span class="p">,</span><span class="n">ageColumnName</span><span class="o">=</span><span class="s1">&#39;ages&#39;</span><span class="p">,</span><span class="n">namesColumName</span><span class="o">=</span><span class="s2">&quot;names&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">snapBenCounties</span><span class="o">.</span><span class="n">head</span><span class="p">()</span> <span class="c1"># see to the rigth...</span>
-</pre></div>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we can count:</p>
+<div class="output_area">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tableOut</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;StateName&#39;</span><span class="p">],</span><span class="n">snapBenCounties</span><span class="p">[</span><span class="s1">&#39;out2013&#39;</span><span class="p">])</span>
-
-<span class="n">tableOut</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;normal&#39;</span><span class="p">,</span> <span class="s1">&#39;veryFewBeneficiaries&#39;</span><span class="p">,</span><span class="s1">&#39;tooMuchBeneficiaries&#39;</span><span class="p">]</span>
-<span class="n">tableOut</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="c1"># sending 0 to missing</span>
-<span class="n">tableOut</span>
-</pre></div>
+<div class="prompt output_prompt">Out[15]:</div>
 
-</div>
-</div>
-</div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>This tells you an idea of the distributions of counties. For example, WA has one county whose number of beneficiaries are very high (compared to the rest of the country counties), Nebraska has the majority of counties that have very few beneficiaries.</p>
-<p>Let me get different <strong>sets</strong> so I can make some queries later:</p>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># states with counties in the lower outliers</span>
-<span class="n">lowOutStates</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">tableOut</span><span class="p">[</span><span class="s2">&quot;veryFewBeneficiaries&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="c1"># states with counties in the upper outliers</span>
-<span class="n">upOutStates</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">tableOut</span><span class="p">[</span><span class="s2">&quot;tooMuchBeneficiaries&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="c1"># states with counties withinh &#39;normal&#39; amount of beneficiaries</span>
-<span class="n">normStates</span><span class="o">=</span><span class="nb">set</span><span class="p">(</span><span class="n">tableOut</span><span class="p">[</span><span class="s2">&quot;normal&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-</pre></div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-</div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Françoise</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Peter</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Rosita</td>
+    </tr>
+  </tbody>
+</table>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Then, we can start asking:</p>
-<ul>
-<li>States with counties  in the upper outliers but that are not present in the lower ones:</li>
-</ul>
 
-</div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">upOutStates</span><span class="o">-</span><span class="n">lowOutStates</span>
-</pre></div>
 
 </div>
 </div>
-</div>
 
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>States with counties  in the lower outliers but that are not present in the upper ones:</li>
-</ul>
-
+<h3 id="e.-Function-badAgeDetector3()-that-receives-a-dataframe-and-returns-a-dataframe-with--the-names-and-ages-of-the-guys-with-wrong-ages.">e. Function <em>badAgeDetector3()</em> that receives a dataframe and <em>returns a dataframe with</em>  the names and ages of the guys with wrong ages.<a class="anchor-link" href="#e.-Function-badAgeDetector3()-that-receives-a-dataframe-and-returns-a-dataframe-with--the-names-and-ages-of-the-guys-with-wrong-ages.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lowOutStates</span><span class="o">-</span><span class="n">upOutStates</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># only change is the way we send the output:</span>
+
+<span class="k">def</span> <span class="nf">badAgeDetector3</span><span class="p">(</span><span class="n">DF</span><span class="p">,</span><span class="n">ageColumnName</span><span class="p">,</span><span class="n">namesColumName</span><span class="p">,</span><span class="n">lowT</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">upT</span><span class="o">=</span><span class="mi">80</span><span class="p">):</span>
+    <span class="n">goodAges</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="n">lowT</span><span class="p">,</span><span class="n">upT</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">DFdetected</span><span class="o">=</span><span class="n">DF</span><span class="p">[</span><span class="o">~</span><span class="n">DF</span><span class="p">[</span><span class="n">ageColumnName</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">goodAges</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">DFdetected</span><span class="p">[[</span><span class="n">namesColumName</span><span class="p">,</span><span class="n">ageColumnName</span><span class="p">]]</span> <span class="c1"># here was the change.</span>
 </pre></div>
 
-</div>
 </div>
-</div>
-
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>States that have counties  in the upper and the lower outliers:</li>
-</ul>
 
-</div>
 </div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lowOutStates</span> <span class="o">&amp;</span> <span class="n">upOutStates</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">badAgeDetector3</span><span class="p">(</span><span class="n">DF</span><span class="o">=</span><span class="n">theData</span><span class="p">,</span><span class="n">ageColumnName</span><span class="o">=</span><span class="s1">&#39;ages&#39;</span><span class="p">,</span><span class="n">namesColumName</span><span class="o">=</span><span class="s2">&quot;names&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>States that have counties either in the upper or the lower outliers (not in both):</li>
-</ul>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lowOutStates</span> <span class="o">^</span> <span class="n">upOutStates</span>
-</pre></div>
 
-</div>
-</div>
-</div>
+<div class="output_area">
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>States that have no outlying counties.</li>
-</ul>
+<div class="prompt output_prompt">Out[17]:</div>
 
-</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>names</th>
+      <th>ages</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>Françoise</td>
+      <td>-33</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Peter</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Rosita</td>
+      <td>190</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">normStates</span> <span class="o">-</span> <span class="p">(</span><span class="n">lowOutStates</span> <span class="o">|</span> <span class="n">upOutStates</span><span class="p">)</span>
-</pre></div>
 
 </div>
+
 </div>
 </div>
 
@@ -14397,71 +12504,108 @@ You can get more information from the variable <em>dataBP</em>; besides informat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Amount of states present in the data (uniting sets):</li>
-</ul>
-
+<h3 id="f.--Function-badAgeDetector4()-that-receives-a-dataframe-and-returns-a-dataframe-with-all-the-info-from-every-guy-with-wrong-ages.">f.  Function <em>badAgeDetector4()</em> that receives a dataframe and <em>returns a dataframe with</em> all the info from every guy with wrong ages.<a class="anchor-link" href="#f.--Function-badAgeDetector4()-that-receives-a-dataframe-and-returns-a-dataframe-with-all-the-info-from-every-guy-with-wrong-ages.">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">normStates</span> <span class="o">|</span> <span class="n">upOutStates</span> <span class="o">|</span> <span class="n">lowOutStates</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># only change is the way we send the output:</span>
+
+<span class="k">def</span> <span class="nf">badAgeDetector4</span><span class="p">(</span><span class="n">DF</span><span class="p">,</span><span class="n">ageColumnName</span><span class="p">,</span><span class="n">namesColumName</span><span class="p">,</span><span class="n">lowT</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">upT</span><span class="o">=</span><span class="mi">80</span><span class="p">):</span>
+    <span class="n">guyAges</span><span class="o">=</span><span class="n">DF</span><span class="p">[</span><span class="n">ageColumnName</span><span class="p">]</span>
+    <span class="n">goodAges</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">lowT</span><span class="p">,</span><span class="n">upT</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="n">DFdetected</span><span class="o">=</span><span class="n">DF</span><span class="p">[</span><span class="o">~</span><span class="n">DF</span><span class="p">[</span><span class="n">ageColumnName</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">goodAges</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="n">DFdetected</span>
 </pre></div>
 
-</div>
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Notice that sets do not count duplicates, compare if we had lists and 'unite them' (the '|' symbol can not be applied to lists):</p>
 
-</div>
 </div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">normStates</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">upOutStates</span><span class="p">)</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">lowOutStates</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">badAgeDetector4</span><span class="p">(</span><span class="n">DF</span><span class="o">=</span><span class="n">tableStudents</span><span class="p">,</span><span class="n">ageColumnName</span><span class="o">=</span><span class="s1">&#39;ages&#39;</span><span class="p">,</span><span class="n">namesColumName</span><span class="o">=</span><span class="s2">&quot;names&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<h3 id="Footnotes">Footnotes<a class="anchor-link" href="#Footnotes">&#182;</a></h3><p><sup id="fn1">1</sup>Take a look to this <a href="https://inequality.org/research/unequal-americas-income-distribution/">blog post</a>. <a href="#ref1" >&#8593;</a></p>
+<div class="output_wrapper">
+<div class="output">
 
-</div>
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ages</th>
+      <th>country</th>
+      <th>education</th>
+      <th>names</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td>-33</td>
+      <td>Senegal</td>
+      <td>Bach</td>
+      <td>Françoise</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>3</td>
+      <td>Chile</td>
+      <td>Master</td>
+      <td>Peter</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>190</td>
+      <td>Singapur</td>
+      <td>Bach</td>
+      <td>Rosita</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<hr>
-<ul>
-<li><a href="#head">Go to page beginning</a></li>
-<li><a href="https://rawgit.com/EvansDataScience/govanalyticsweb/master/Python/P3B_BivariateEDA.html">Go to PART B: Bivariate EDA in Python</a></li>
-<li><a href="https://evansdatascience.github.io/GovernanceAnalytics/">Go to Course schedule</a></li>
-</ul>
 
 </div>
 </div>
+
 </div>
     </div>
   </div>

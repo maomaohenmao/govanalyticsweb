@@ -130,11 +130,10 @@ $(document).ready(function () {
 <hr />
 </div>
 </div>
-<div id="session-3-data-exploration-in-r" class="section level1">
-<h1>Session 3: Data Exploration in R</h1>
-<div id="part-a-bivariate-case" class="section level2">
-<h2>Part A: Bivariate Case</h2>
-<p><a id="beginning"></a></p>
+<div id="session-3-data-exploration-for-governance-analytics-in-r" class="section level1">
+<h1>Session 3: Data Exploration for Governance Analytics in R</h1>
+<div id="part-b-bivariate-case" class="section level2">
+<h2>Part B: Bivariate Case</h2>
 <p><a id="beginning"></a></p>
 <p>Bivariate exploration has different combinations:</p>
 <ol style="list-style-type: decimal">
@@ -166,10 +165,10 @@ CrossTable(governor$party,governor$election_year,prop.t=F, prop.r=F, prop.c=F,pr
 governorDR=governor[!governor$party%in% byeCategories,]</code></pre>
 <p>Let’s try again, now showing percents:</p>
 <pre class="r"><code>CrossTable(governorDR$party,governorDR$election_year,prop.t=T, prop.r=F, prop.c=F,prop.chisq=F)</code></pre>
-<p>We can see the same results, but using relative values:</p>
-<pre class="r"><code># share by year per party:
+<p>We can re compute percents (relative values) marginally:</p>
+<pre class="r"><code># year by party:
 CrossTable(governorDR$party,governorDR$election_year,prop.t=F, prop.r=T, prop.c=F,prop.chisq=F)</code></pre>
-<pre class="r"><code># Share by party per year:
+<pre class="r"><code># party by year:
 CrossTable(governorDR$party,governorDR$election_year,prop.t=F, prop.r=F, prop.c=T,prop.chisq=F)</code></pre>
 <p>We can also use <span class="math inline">\({\chi}^2\)</span> to test the <strong>Ho</strong> that the variables are independent (not associated):</p>
 <pre class="r"><code>CrossTable(governorDR$party,governorDR$election_year,prop.t=F, prop.r=F, prop.c=F,prop.chisq=F,chisq=T)</code></pre>
@@ -239,12 +238,12 @@ meanPlot = ggplot(data, aes(y=mean, x=party)) + geom_point()
 (errorPlot = meanPlot + geom_errorbar(aes(ymin = lower, ymax = upper)))</code></pre>
 <p>The intersection confirms that the averages may not differ; then, a <em>t-test</em> should be non-significant:</p>
 <pre class="r"><code>t.test(business$amount~business$party,var.equal = T) </code></pre>
-<p>The t-test suggests the means are not different. Can we conclude that both groups behave similarly? (<em>this is a differen question</em>).</p>
+<p>The t-test suggests the means are not different. Can we conclude that both groups behave similarly? (<em>this is a different question</em>).</p>
 <p>Let me plot the distribution of both groups:</p>
 <pre class="r"><code>ggplot(business, aes(amount, colour = party)) +
   geom_density() </code></pre>
 <p>Let’s try a non-parametric test to ask if both distributions are similar:</p>
-<pre class="r"><code>wilcox.test(amount ~ party, data=business)</code></pre>
+<pre class="r"><code>wilcox.test(amount ~ party, data=business) # this is NOT Wilcoxon signed-rank test!</code></pre>
 <p>The non-parametric case found that both distributions are different.</p>
 <p>Let’s see a more complicated case (more than two categories):</p>
 <pre class="r"><code>m &lt;- ggplot(governorDR, aes(x = amount))
@@ -267,7 +266,7 @@ result[4]&lt;0.05</code></pre>
 result=dunn.test(governorDR$amount,as.factor(governorDR$code),  method=&quot;bh&quot;,kw=F)  </code></pre>
 <p>Again, this is an easier way to see the last result:</p>
 <pre class="r"><code>data.frame(comparisons=result$comparisons,pval=result$P.adjusted&lt;0.05)</code></pre>
-<hr />
+<p>Notice the pairwise comparison results are different between parametric and non-parametric approaches. ____</p>
 <p><a id="part3"></a></p>
 </div>
 <div id="numerical---numerical" class="section level2">
